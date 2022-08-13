@@ -69,10 +69,25 @@ end
 time([[try_loadstring definition]], false)
 time([[Defining packer_plugins]], true)
 _G.packer_plugins = {
+  minimalist = {
+    loaded = true,
+    path = "/home/pedro/.local/share/nvim/site/pack/packer/start/minimalist",
+    url = "https://github.com/dikiaap/minimalist"
+  },
+  ["oceanic-next"] = {
+    loaded = true,
+    path = "/home/pedro/.local/share/nvim/site/pack/packer/start/oceanic-next",
+    url = "https://github.com/mhartington/oceanic-next"
+  },
   ["packer.nvim"] = {
     loaded = true,
     path = "/home/pedro/.local/share/nvim/site/pack/packer/start/packer.nvim",
     url = "https://github.com/wbthomason/packer.nvim"
+  },
+  ["tender.vim"] = {
+    loaded = true,
+    path = "/home/pedro/.local/share/nvim/site/pack/packer/start/tender.vim",
+    url = "https://github.com/jacoborus/tender.vim"
   },
   ["tokyonight.nvim"] = {
     loaded = true,
