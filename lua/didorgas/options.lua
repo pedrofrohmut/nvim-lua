@@ -4,9 +4,9 @@ local options = {
     autoindent = true,
     smartindent = true,
     expandtab = true,
-    shiftwidth = 2,
-    softtabstop = 2,
-    tabstop = 2,
+    shiftwidth = 4,
+    softtabstop = 4,
+    tabstop = 4,
     
     -- Searching
     incsearch = true,
@@ -29,15 +29,15 @@ local options = {
     sidescrolloff = 8,
     cursorline = true,
     mouse = nv,
+    updatetime = 250,
 
     -- Files
     fileformat = "unix",
-    
-    -- Coc May remove
-    updatetime = 500,
     backup = false,
     writebackup = false,
-    hidden = true
+
+    -- CMP
+    completeopt = menu,menuone,noselect
 }
 
 for key, value in pairs(options) do
