@@ -23,13 +23,14 @@ local options = {
     showmode = false,
     number = true,
     relativenumber = true,
+    wildmenu = true,
     
     -- Behavior
     splitright = true,
     splitbelow = true,
     sidescrolloff = 8,
     cursorline = true,
-    mouse = nv,
+    mouse = "a",
     updatetime = 250,
 
     -- Files
@@ -47,3 +48,4 @@ end
 
 -- Remove auto insert comments next line
 vim.cmd [[autocmd FileType * setlocal formatoptions-=cro]]
+vim.cmd [[set path=$PWD/** ]]
