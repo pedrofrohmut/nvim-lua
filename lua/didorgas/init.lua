@@ -1,3 +1,6 @@
 require("didorgas.options")
+require("didorgas.colors")
 require("didorgas.keymaps")
-require("didorgas.plugins")
+require("didorgas.plugins.packer")
+require("didorgas.plugins.cmp")
+require("didorgas.plugins.smalls")

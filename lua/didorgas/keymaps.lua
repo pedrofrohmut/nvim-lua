@@ -76,9 +76,9 @@ keymap("n", "<leader>tl", ":+tabmove<CR>", options)
 
 -- Go To - Next/Prev
 keymap("n", "<leader>tn", ":tabnext<CR>", options)
-keymap("n", "<C-L>", ":tabnext<CR>", options)
+keymap("n", "<C-l>", ":tabnext<CR>", options)
 keymap("n", "<leader>tp", ":tabprevious<CR>", options)
-keymap("n", "<C-H>", ":tabprevious<CR>", options)
+keymap("n", "<C-h>", ":tabprevious<CR>", options)
 
 -- ### Windows #################################################################
 

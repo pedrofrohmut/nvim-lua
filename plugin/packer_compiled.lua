@@ -69,10 +69,60 @@ end
 time([[try_loadstring definition]], false)
 time([[Defining packer_plugins]], true)
 _G.packer_plugins = {
+  ["cmp-buffer"] = {
+    loaded = true,
+    path = "/home/pedro/.local/share/nvim/site/pack/packer/start/cmp-buffer",
+    url = "https://github.com/hrsh7th/cmp-buffer"
+  },
+  ["cmp-cmdline"] = {
+    loaded = true,
+    path = "/home/pedro/.local/share/nvim/site/pack/packer/start/cmp-cmdline",
+    url = "https://github.com/hrsh7th/cmp-cmdline"
+  },
+  ["cmp-nvim-lsp"] = {
+    loaded = true,
+    path = "/home/pedro/.local/share/nvim/site/pack/packer/start/cmp-nvim-lsp",
+    url = "https://github.com/hrsh7th/cmp-nvim-lsp"
+  },
+  ["cmp-path"] = {
+    loaded = true,
+    path = "/home/pedro/.local/share/nvim/site/pack/packer/start/cmp-path",
+    url = "https://github.com/hrsh7th/cmp-path"
+  },
+  ["cmp-vsnip"] = {
+    loaded = true,
+    path = "/home/pedro/.local/share/nvim/site/pack/packer/start/cmp-vsnip",
+    url = "https://github.com/hrsh7th/cmp-vsnip"
+  },
+  ["editorconfig-vim"] = {
+    loaded = true,
+    path = "/home/pedro/.local/share/nvim/site/pack/packer/start/editorconfig-vim",
+    url = "https://github.com/editorconfig/editorconfig-vim"
+  },
+  ["emmet-vim"] = {
+    loaded = true,
+    path = "/home/pedro/.local/share/nvim/site/pack/packer/start/emmet-vim",
+    url = "https://github.com/mattn/emmet-vim"
+  },
+  ["friendly-snippets"] = {
+    loaded = true,
+    path = "/home/pedro/.local/share/nvim/site/pack/packer/start/friendly-snippets",
+    url = "https://github.com/rafamadriz/friendly-snippets"
+  },
   minimalist = {
     loaded = true,
     path = "/home/pedro/.local/share/nvim/site/pack/packer/start/minimalist",
     url = "https://github.com/dikiaap/minimalist"
+  },
+  ["nvim-cmp"] = {
+    loaded = true,
+    path = "/home/pedro/.local/share/nvim/site/pack/packer/start/nvim-cmp",
+    url = "https://github.com/hrsh7th/nvim-cmp"
+  },
+  ["nvim-lspconfig"] = {
+    loaded = true,
+    path = "/home/pedro/.local/share/nvim/site/pack/packer/start/nvim-lspconfig",
+    url = "https://github.com/neovim/nvim-lspconfig"
   },
   ["oceanic-next"] = {
     loaded = true,
@@ -84,6 +134,11 @@ _G.packer_plugins = {
     path = "/home/pedro/.local/share/nvim/site/pack/packer/start/packer.nvim",
     url = "https://github.com/wbthomason/packer.nvim"
   },
+  tcomment_vim = {
+    loaded = true,
+    path = "/home/pedro/.local/share/nvim/site/pack/packer/start/tcomment_vim",
+    url = "https://github.com/tomtom/tcomment_vim"
+  },
   ["tender.vim"] = {
     loaded = true,
     path = "/home/pedro/.local/share/nvim/site/pack/packer/start/tender.vim",
@@ -93,6 +148,36 @@ _G.packer_plugins = {
     loaded = true,
     path = "/home/pedro/.local/share/nvim/site/pack/packer/start/tokyonight.nvim",
     url = "https://github.com/folke/tokyonight.nvim"
+  },
+  ["vim-closetag"] = {
+    loaded = true,
+    path = "/home/pedro/.local/share/nvim/site/pack/packer/start/vim-closetag",
+    url = "https://github.com/alvan/vim-closetag"
+  },
+  ["vim-gitgutter"] = {
+    loaded = true,
+    path = "/home/pedro/.local/share/nvim/site/pack/packer/start/vim-gitgutter",
+    url = "https://github.com/airblade/vim-gitgutter"
+  },
+  ["vim-repeat"] = {
+    loaded = true,
+    path = "/home/pedro/.local/share/nvim/site/pack/packer/start/vim-repeat",
+    url = "https://github.com/tpope/vim-repeat"
+  },
+  ["vim-smalls"] = {
+    loaded = true,
+    path = "/home/pedro/.local/share/nvim/site/pack/packer/start/vim-smalls",
+    url = "https://github.com/t9md/vim-smalls"
+  },
+  ["vim-surround"] = {
+    loaded = true,
+    path = "/home/pedro/.local/share/nvim/site/pack/packer/start/vim-surround",
+    url = "https://github.com/tpope/vim-surround"
+  },
+  ["vim-vsnip"] = {
+    loaded = true,
+    path = "/home/pedro/.local/share/nvim/site/pack/packer/start/vim-vsnip",
+    url = "https://github.com/hrsh7th/vim-vsnip"
   }
 }
 

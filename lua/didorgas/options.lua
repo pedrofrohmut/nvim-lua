@@ -11,6 +11,8 @@ local options = {
     -- Searching
     incsearch = true,
     hlsearch = false,
+    ignorecase = true,
+    smartcase = true,
 
     -- Appearance
     signcolumn = "yes:1",
@@ -25,7 +27,6 @@ local options = {
     -- Behavior
     splitright = true,
     splitbelow = true,
-    scrolloff = 8,
     sidescrolloff = 8,
     cursorline = true,
     mouse = nv,
