@@ -3,6 +3,9 @@ local map = vim.api.nvim_set_keymap
 
 vim.g.mapleader = " "
 
+-- Help
+map("n", "<F1>", ":vertical help ", {})
+
 -- File Explorer
 map("n", "<leader>fe", ":Ex<CR>", options)
 
@@ -71,9 +74,9 @@ map("n", "<leader>tl", ":+tabmove<CR>", options)
 
 -- Go To - Next/Prev
 map("n", "<leader>tn", ":tabnext<CR>", options)
-map("n", "<C-n>", ":tabnext<CR>", options)
+map("n", "<C-l>", ":tabnext<CR>", options)
 map("n", "<leader>tp", ":tabprevious<CR>", options)
-map("n", "<C-p>", ":tabprevious<CR>", options)
+map("n", "<C-h>", ":tabprevious<CR>", options)
 
 -- ### Windows #################################################################
 
@@ -85,8 +88,6 @@ map("n", "<Down>", ":resize -5<CR>", options)
 map("n", "<Left>", ":vertical resize -5<CR>", options)
 map("n", "<Right>", ":vertical resize +5<CR>", options)
 
--- Change Focus
-map("n", "<C-h>", "<C-w>h", options)
-map("n", "<C-j>", "<C-w>j", options)
-map("n", "<C-k>", "<C-w>k", options)
-map("n", "<C-l>", "<C-w>l", options)
+-- Change/Rotate Focus
+map("n", "<C-j>", "<C-w>w", options) -- Next
+map("n", "<C-k>", "<C-w>W", options) -- Prev

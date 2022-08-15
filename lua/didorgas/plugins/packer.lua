@@ -44,11 +44,16 @@ return require('packer').startup(function(use)
     -- Snippets for CMP [Required]
     use 'hrsh7th/cmp-vsnip'
     use 'hrsh7th/vim-vsnip'
+    -- Snippets made by community
+    use 'rafamadriz/friendly-snippets'
 
     -- LSP neovim lsp and mason for install servers
     use 'neovim/nvim-lspconfig'
     use 'williamboman/mason.nvim'
     use 'williamboman/mason-lspconfig.nvim'
+
+    -- CTags / Tagbar
+    use 'preservim/tagbar'
 
     -- Telescope
     use 'nvim-lua/plenary.nvim' -- Required for Telescope
@@ -60,9 +65,6 @@ return require('packer').startup(function(use)
 
     -- Tree File Explorer
     use 'preservim/nerdtree'
-
-    -- Snippets made by community
-    use 'rafamadriz/friendly-snippets'
 
     -- Jump plugin like small version of easy motion
     use 't9md/vim-smalls'

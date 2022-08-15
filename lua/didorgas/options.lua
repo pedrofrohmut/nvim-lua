@@ -7,7 +7,7 @@ local options = {
     shiftwidth = 4,
     softtabstop = 4,
     tabstop = 4,
-    
+
     -- Searching
     incsearch = true,
     hlsearch = false,
@@ -24,7 +24,7 @@ local options = {
     number = true,
     relativenumber = true,
     wildmenu = true,
-    
+
     -- Behavior
     splitright = true,
     splitbelow = true,
@@ -39,7 +39,7 @@ local options = {
     writebackup = false,
 
     -- CMP
-    completeopt = menu,menuone,noselect
+    completeopt = "menu,menuone,noselect"
 }
 
 for key, value in pairs(options) do
@@ -49,4 +49,3 @@ end
 -- Remove auto insert comments next line
 vim.cmd [[ autocmd FileType * setlocal formatoptions-=cro ]]
 vim.cmd [[ set path=$PWD/** ]]
---vim.cmd [[ set wildignore=**/node_modules/** ]]
