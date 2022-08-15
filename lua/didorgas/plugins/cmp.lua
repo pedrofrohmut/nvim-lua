@@ -1,4 +1,7 @@
-local cmp = require("cmp")
+local status_ok, cmp = pcall(require, "cmp")
+if not status_ok then
+    print("Error to require CMP. Check the config")
+end
 
 cmp.setup({
     snippet = {
@@ -51,10 +54,3 @@ cmp.setup.cmdline(':', {
         { name = 'cmdline' }
     })
 })
-
--- Setup lspconfig.
---local capabilities = require('cmp_nvim_lsp').update_capabilities(vim.lsp.protocol.make_client_capabilities())
--- Replace <YOUR_LSP_SERVER> with each lsp server you've enabled.
--- require('lspconfig')['<YOUR_LSP_SERVER>'].setup {
---     capabilities = capabilities
--- }
