@@ -2,6 +2,8 @@ local M = {}
 
 -- TODO: make them work in visual mode
 
+-- TODO: Use recursion to change indentation
+
 -- Removes trailing and suppress errors
 function M.removeTrailing()
     local ok, _ = pcall(vim.cmd, [[ execute '%s/\s\+$' ]])

@@ -44,6 +44,7 @@ return require('packer').startup(function(use)
     -- Snippets for CMP [Required]
     use 'hrsh7th/cmp-vsnip'
     use 'hrsh7th/vim-vsnip'
+    use 'hrsh7th/vim-vsnip-integ'
     -- Snippets made by community
     use 'rafamadriz/friendly-snippets'
 
