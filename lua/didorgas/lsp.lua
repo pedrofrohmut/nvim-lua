@@ -9,6 +9,7 @@ vim.keymap.set('n', 'g[', vim.diagnostic.goto_prev, opts)
 vim.keymap.set('n', 'g]', vim.diagnostic.goto_next, opts)
 -- vim.keymap.set('n', '<space>q', vim.diagnostic.setloclist, opts)
 vim.keymap.set('n', '<space>dl', vim.diagnostic.setloclist, opts)
+vim.keymap.set('n', '<space>dh', vim.diagnostic.disable, opts)
 
 -- Use an on_attach function to only map the following keys
 -- after the language server attaches to the current buffer
@@ -50,13 +51,13 @@ local lsp_flags = {
 -- Setup lspconfig.
 local capabilities = require('cmp_nvim_lsp').update_capabilities(vim.lsp.protocol.make_client_capabilities())
 
-require('lspconfig')['clangd'].setup{
+require('lspconfig')['clangd'].setup {
     capabilities = capabilities,
     on_attach = on_attach,
     flags = lsp_flags
 }
 
-require('lspconfig')['sumneko_lua'].setup{
+require('lspconfig')['sumneko_lua'].setup {
     capabilities = capabilities,
     on_attach = on_attach,
     flags = lsp_flags,
@@ -69,7 +70,13 @@ require('lspconfig')['sumneko_lua'].setup{
     }
 }
 
-require('lspconfig')['tsserver'].setup{
+require('lspconfig')['tsserver'].setup {
+    capabilities = capabilities,
+    on_attach = on_attach,
+    flags = lsp_flags,
+}
+
+require('lspconfig')['csharp_ls'].setup {
     capabilities = capabilities,
     on_attach = on_attach,
     flags = lsp_flags,
