@@ -30,14 +30,18 @@ map("v", "<A-y>", "\"xy", options)
 map("v", "<A-d>", "\"xd", options)
 map("n", "<A-p>", "\"xp", options)
 
--- Function Utils
-map("n", "<F4>", ":bufdo bd", { noremap = true }) -- Buffer Delete to all buffers / Reset
-map("n", "<F11>", ":%s/\\s\\+$//g<CR>", { noremap = true }) -- Remove trailing spaces
-map("n", "<F12>", ":source ~/.config/nvim/init.lua<CR>", { noremap = true }) -- Resource config
+-- ### String Utils ###########################################################
 
--- Closing character on Enter
+-- Remove trailing spaces
+map("n", "<leader>s1", "<cmd>lua require('didorgas.stringFunctions').removeTrailing()<Enter>", options)
+
+-- Indent 2 to 4 spaces
+map("n", "<leader>s2", "<cmd>lua require('didorgas.stringFunctions').indent2to4()<Enter>", options)
+
+-- ### Plugin: Closing cheracter ###############################################
 map("i", "(<CR>", "(<CR>)<Esc>ko", options)
 map("i", "[<CR>", "[<CR>]<Esc>ko", options)
+map("i", "[[<CR>", "[[<CR>]]<Esc>ko", options)
 map("i", "{<CR>", "{<CR>}<Esc>ko", options)
 map("i", "({<CR>", "({<CR>})<Esc>ko", options)
 map("i", "`<CR>",  "<CR>`<Esc>ko<Tab>", options)
