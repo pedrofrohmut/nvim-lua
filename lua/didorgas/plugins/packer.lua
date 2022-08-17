@@ -53,6 +53,9 @@ return require('packer').startup(function(use)
     use 'williamboman/mason.nvim'
     use 'williamboman/mason-lspconfig.nvim'
 
+    -- Linter and Formatter
+    use 'jose-elias-alvarez/null-ls.nvim'
+
     -- CTags / Tagbar
     use 'preservim/tagbar'
 
@@ -68,7 +71,8 @@ return require('packer').startup(function(use)
     use 'preservim/nerdtree'
 
     -- Jump plugin like small version of easy motion
-    use 't9md/vim-smalls'
+    -- use 't9md/vim-smalls'
+    use 'justinmk/vim-sneak'
 
     -- Emmet - HTML JSX snippets
     use 'mattn/emmet-vim'
@@ -89,6 +93,12 @@ return require('packer').startup(function(use)
 
     -- Git gutter
     use 'airblade/vim-gitgutter'
+
+    -- Toggle Terminal
+    use 'akinsho/toggleterm.nvim'
+
+    -- Status Line
+    use 'nvim-lualine/lualine.nvim'
 
     -- Color Schemes
     use 'mhartington/oceanic-next'

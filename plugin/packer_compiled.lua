@@ -109,6 +109,11 @@ _G.packer_plugins = {
     path = "/home/pedro/.local/share/nvim/site/pack/packer/start/friendly-snippets",
     url = "https://github.com/rafamadriz/friendly-snippets"
   },
+  ["lualine.nvim"] = {
+    loaded = true,
+    path = "/home/pedro/.local/share/nvim/site/pack/packer/start/lualine.nvim",
+    url = "https://github.com/nvim-lualine/lualine.nvim"
+  },
   ["mason-lspconfig.nvim"] = {
     loaded = true,
     path = "/home/pedro/.local/share/nvim/site/pack/packer/start/mason-lspconfig.nvim",
@@ -128,6 +133,11 @@ _G.packer_plugins = {
     loaded = true,
     path = "/home/pedro/.local/share/nvim/site/pack/packer/start/nerdtree",
     url = "https://github.com/preservim/nerdtree"
+  },
+  ["null-ls.nvim"] = {
+    loaded = true,
+    path = "/home/pedro/.local/share/nvim/site/pack/packer/start/null-ls.nvim",
+    url = "https://github.com/jose-elias-alvarez/null-ls.nvim"
   },
   ["nvim-cmp"] = {
     loaded = true,
@@ -179,6 +189,11 @@ _G.packer_plugins = {
     path = "/home/pedro/.local/share/nvim/site/pack/packer/start/tender.vim",
     url = "https://github.com/jacoborus/tender.vim"
   },
+  ["toggleterm.nvim"] = {
+    loaded = true,
+    path = "/home/pedro/.local/share/nvim/site/pack/packer/start/toggleterm.nvim",
+    url = "https://github.com/akinsho/toggleterm.nvim"
+  },
   ["tokyonight.nvim"] = {
     loaded = true,
     path = "/home/pedro/.local/share/nvim/site/pack/packer/start/tokyonight.nvim",
@@ -199,10 +214,10 @@ _G.packer_plugins = {
     path = "/home/pedro/.local/share/nvim/site/pack/packer/start/vim-repeat",
     url = "https://github.com/tpope/vim-repeat"
   },
-  ["vim-smalls"] = {
+  ["vim-sneak"] = {
     loaded = true,
-    path = "/home/pedro/.local/share/nvim/site/pack/packer/start/vim-smalls",
-    url = "https://github.com/t9md/vim-smalls"
+    path = "/home/pedro/.local/share/nvim/site/pack/packer/start/vim-sneak",
+    url = "https://github.com/justinmk/vim-sneak"
   },
   ["vim-surround"] = {
     loaded = true,
