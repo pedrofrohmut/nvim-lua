@@ -24,7 +24,8 @@ local on_attach = function(client, bufnr)
     vim.keymap.set('n', '<C-\\>', vim.lsp.buf.signature_help, bufopts)
 
     vim.keymap.set('n', '<space>rn', vim.lsp.buf.rename, bufopts)
-    vim.keymap.set('n', '<space>a', vim.lsp.buf.code_action, bufopts)
+
+    vim.keymap.set('n', '<space>ca', vim.lsp.buf.code_action, bufopts)
     vim.keymap.set('n', '<space>cf', vim.lsp.buf.formatting, bufopts)
 end
 
@@ -62,6 +63,12 @@ require('lspconfig')['tsserver'].setup {
 }
 
 require('lspconfig')['csharp_ls'].setup {
+    capabilities = capabilities,
+    on_attach = on_attach,
+    flags = lsp_flags,
+}
+
+require('lspconfig')['omnisharp'].setup {
     capabilities = capabilities,
     on_attach = on_attach,
     flags = lsp_flags,

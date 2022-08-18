@@ -11,8 +11,6 @@ local options = {
     -- Searching
     incsearch = true,
     hlsearch = false,
-    ignorecase = true,
-    smartcase = true,
 
     -- Appearance
     signcolumn = "yes:1",

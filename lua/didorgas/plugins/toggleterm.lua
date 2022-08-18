@@ -8,4 +8,5 @@ vim.keymap.set("n", "<C-q>", "<cmd>ToggleTerm<Enter>", { noremap = true, silent 
 
 toggleterm.setup {
     direction = "float",
+    shell = "fish"
 }
