@@ -14,7 +14,7 @@ local options = {
 
     -- Appearance
     signcolumn = "yes:1",
-    colorcolumn = "81,121",
+    colorcolumn = { "81", "101" },
     cmdheight = 1,
     termguicolors = true,
     wrap = false,
@@ -37,7 +37,7 @@ local options = {
     writebackup = false,
 
     -- CMP
-    completeopt = "menu,menuone,noselect"
+    completeopt = { "menu", "menuone", "noselect" }
 }
 
 for key, value in pairs(options) do
