@@ -18,33 +18,17 @@ cmp.setup({
         --- MY CUSTOM KEYS
         ['<C-y>'] = cmp.config.disable,
         ['<Tab>'] = cmp.mapping.select_next_item(),
+        ['<C-n>'] = cmp.mapping.select_next_item(),
         ['<S-Tab>'] = cmp.mapping.select_prev_item(),
+        ['<C-p>'] = cmp.mapping.select_prev_item(),
     }),
     sources = cmp.config.sources({
-        { name = 'buffer' },
         { name = 'nvim_lsp' },
         { name = 'vsnip' },
-    })
-})
-
--- Set configuration for specific filetype.
-cmp.setup.filetype('gitcommit', {
-    sources = cmp.config.sources({
-        { name = 'cmp_git' }, -- You can specify the `cmp_git` source if you were installed it.
-    }, {
         { name = 'buffer' },
     })
 })
 
--- Use buffer source for `/` (if you enabled `native_menu`, this won't work anymore).
-cmp.setup.cmdline('/', {
-    mapping = cmp.mapping.preset.cmdline(),
-    sources = {
-        { name = 'buffer' }
-    }
-})
-
--- Use cmdline & path source for ':' (if you enabled `native_menu`, this won't work anymore).
 cmp.setup.cmdline(':', {
     mapping = cmp.mapping.preset.cmdline(),
     sources = cmp.config.sources({

@@ -71,7 +71,6 @@ return require('packer').startup(function(use)
     use 'preservim/nerdtree'
 
     -- Jump plugin like small version of easy motion
-    -- use 't9md/vim-smalls'
     use 'justinmk/vim-sneak'
 
     -- Emmet - HTML JSX snippets
