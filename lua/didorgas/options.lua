@@ -35,6 +35,7 @@ local options = {
     fileformat = "unix",
     backup = false,
     writebackup = false,
+    autoread = true,
 
     -- CMP
     completeopt = { "menu", "menuone", "noselect" }

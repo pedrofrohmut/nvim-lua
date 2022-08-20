@@ -1,10 +1,11 @@
 local opts = { noremap=true, silent=true }
-vim.keymap.set('n', '<space>do', vim.diagnostic.open_float, opts)
+vim.keymap.set('n', '<leader>do', vim.diagnostic.open_float, opts)
 vim.keymap.set('n', 'g[', vim.diagnostic.goto_prev, opts)
 vim.keymap.set('n', 'g]', vim.diagnostic.goto_next, opts)
-vim.keymap.set('n', '<space>dl', vim.diagnostic.setloclist, opts)
-vim.keymap.set('n', '<space>dd', vim.diagnostic.disable, opts)
-vim.keymap.set('n', '<space>de', vim.diagnostic.enable, opts)
+vim.keymap.set('n', '<leader>dl', vim.diagnostic.setloclist, opts)
+vim.keymap.set('n', '<leader>dd', vim.diagnostic.disable, opts)
+vim.keymap.set('n', '<leader>de', vim.diagnostic.enable, opts)
+vim.keymap.set('n', '<leader>df', "<cmd>Telescope diagnostics<Enter>", opts)
 
 -- Use an on_attach function to only map the following keys
 -- after the language server attaches to the current buffer
@@ -23,10 +24,10 @@ local on_attach = function(client, bufnr)
     vim.keymap.set('n', 'K', vim.lsp.buf.hover, bufopts)
     vim.keymap.set('n', '<C-\\>', vim.lsp.buf.signature_help, bufopts)
 
-    vim.keymap.set('n', '<space>rn', vim.lsp.buf.rename, bufopts)
+    vim.keymap.set('n', '<leader>rn', vim.lsp.buf.rename, bufopts)
 
-    vim.keymap.set('n', '<space>ca', vim.lsp.buf.code_action, bufopts)
-    vim.keymap.set('n', '<space>cf', vim.lsp.buf.formatting, bufopts)
+    vim.keymap.set('n', '<leader>ca', vim.lsp.buf.code_action, bufopts)
+    vim.keymap.set('n', '<leader>cf', vim.lsp.buf.formatting, bufopts)
 end
 
 local lsp_flags = {

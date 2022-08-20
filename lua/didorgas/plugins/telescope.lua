@@ -5,7 +5,7 @@ vim.keymap.set("n", "<leader>fh", "<cmd>Telescope help_tags<Enter>", {})
 
 require('telescope').setup({
     defaults = {
-        file_ignore_patterns = { "bin/", "obj/", "node_modules" },
+        file_ignore_patterns = { "bin/", "obj/", "node_modules", ".git" },
     },
     pickers = {
         find_files = {
