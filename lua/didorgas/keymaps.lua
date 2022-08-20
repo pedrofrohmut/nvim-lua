@@ -3,8 +3,9 @@ local map = vim.api.nvim_set_keymap
 
 vim.g.mapleader = " "
 
--- Help
-map("n", "<F1>", ":vertical help ", {})
+-- Function Keys
+map("n", "<F1>", ":vertical help ", { noremap = true })
+map("n", "<F12>", "<cmd>LspInfo<Enter>", { noremap = true })
 
 -- File Explorer
 map("n", "<leader>fe", ":Ex<CR>", options)
@@ -18,8 +19,8 @@ map("n", "<leader>j", "o<Esc>k", options)
 map("n", "<leader>k", "O<Esc>j", options)
 
 -- Scrolling (Needed on Windows/WSL)
-map("n", "<A-j>", "<C-e>", options)
-map("n", "<A-k>", "<C-y>", options)
+map("n", "<A-j>", "3<C-e>", options)
+map("n", "<A-k>", "3<C-y>", options)
 
 -- Move Text
 map("v", "<C-j>", ":move '>+1<CR>gv-gv", options)
@@ -29,6 +30,11 @@ map("v", "<C-k>", ":move '<-2<CR>gv-gv", options)
 map("v", "<A-y>", "\"xy", options)
 map("v", "<A-d>", "\"xd", options)
 map("n", "<A-p>", "\"xp", options)
+
+-- Easy Register Copy/Cut to/from System Clipboard (:checkhealth if not working)
+map("v", "<leader>sy", "\"+y", options)
+map("v", "<leader>sd", "\"+d", options)
+map("n", "<leader>sp", "\"+p", options)
 
 -- ### String Utils ###########################################################
 
@@ -91,6 +97,10 @@ map("n", "<Down>", ":resize -5<CR>", options)
 -- Resize Vertical
 map("n", "<Left>", ":vertical resize -5<CR>", options)
 map("n", "<Right>", ":vertical resize +5<CR>", options)
+
+-- Splits
+map("n", "<leader>ws", "<C-w>s", options)
+map("n", "<leader>wv", "<C-w>v", options)
 
 -- Change/Rotate Focus
 map("n", "<C-j>", "<C-w>w", options) -- Next
