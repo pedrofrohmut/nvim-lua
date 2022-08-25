@@ -1,4 +1,13 @@
 local opts = { noremap=true, silent=true }
+
+vim.diagnostics.config {
+    virtual_text = false,
+}
+
+vim.cmd [[
+    autocmd CursorHold,CursorHoldI * lua vim.diagnostic.open_float(nil, {focus=false})
+]]
+
 vim.keymap.set('n', '<leader>do', vim.diagnostic.open_float, opts)
 vim.keymap.set('n', 'g[', vim.diagnostic.goto_prev, opts)
 vim.keymap.set('n', 'g]', vim.diagnostic.goto_next, opts)
