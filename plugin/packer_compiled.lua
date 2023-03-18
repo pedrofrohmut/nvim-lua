@@ -9,23 +9,26 @@ vim.api.nvim_command('packadd packer.nvim')
 
 local no_errors, error_msg = pcall(function()
 
-  local time
-  local profile_info
-  local should_profile = false
-  if should_profile then
-    local hrtime = vim.loop.hrtime
-    profile_info = {}
-    time = function(chunk, start)
-      if start then
-        profile_info[chunk] = hrtime()
-      else
-        profile_info[chunk] = (hrtime() - profile_info[chunk]) / 1e6
-      end
+_G._packer = _G._packer or {}
+_G._packer.inside_compile = true
+
+local time
+local profile_info
+local should_profile = false
+if should_profile then
+  local hrtime = vim.loop.hrtime
+  profile_info = {}
+  time = function(chunk, start)
+    if start then
+      profile_info[chunk] = hrtime()
+    else
+      profile_info[chunk] = (hrtime() - profile_info[chunk]) / 1e6
     end
-  else
-    time = function(chunk, start) end
   end
-  
+else
+  time = function(chunk, start) end
+end
+
 local function save_profiles(threshold)
   local sorted_times = {}
   for chunk_name, time_taken in pairs(profile_info) do
@@ -38,8 +41,10 @@ local function save_profiles(threshold)
       results[i] = elem[1] .. ' took ' .. elem[2] .. 'ms'
     end
   end
+  if threshold then
+    table.insert(results, '(Only showing plugins that took longer than ' .. threshold .. ' ms ' .. 'to load)')
+  end
 
-  _G._packer = _G._packer or {}
   _G._packer.profile_output = results
 end
 
@@ -104,11 +109,6 @@ _G.packer_plugins = {
     path = "/home/pedro/.local/share/nvim/site/pack/packer/start/emmet-vim",
     url = "https://github.com/mattn/emmet-vim"
   },
-  ["friendly-snippets"] = {
-    loaded = true,
-    path = "/home/pedro/.local/share/nvim/site/pack/packer/start/friendly-snippets",
-    url = "https://github.com/rafamadriz/friendly-snippets"
-  },
   ["lualine.nvim"] = {
     loaded = true,
     path = "/home/pedro/.local/share/nvim/site/pack/packer/start/lualine.nvim",
@@ -124,20 +124,15 @@ _G.packer_plugins = {
     path = "/home/pedro/.local/share/nvim/site/pack/packer/start/mason.nvim",
     url = "https://github.com/williamboman/mason.nvim"
   },
-  minimalist = {
-    loaded = true,
-    path = "/home/pedro/.local/share/nvim/site/pack/packer/start/minimalist",
-    url = "https://github.com/dikiaap/minimalist"
-  },
   nerdtree = {
     loaded = true,
     path = "/home/pedro/.local/share/nvim/site/pack/packer/start/nerdtree",
     url = "https://github.com/preservim/nerdtree"
   },
-  ["null-ls.nvim"] = {
+  ["nvim-autopairs"] = {
     loaded = true,
-    path = "/home/pedro/.local/share/nvim/site/pack/packer/start/null-ls.nvim",
-    url = "https://github.com/jose-elias-alvarez/null-ls.nvim"
+    path = "/home/pedro/.local/share/nvim/site/pack/packer/start/nvim-autopairs",
+    url = "https://github.com/windwp/nvim-autopairs"
   },
   ["nvim-cmp"] = {
     loaded = true,
@@ -149,10 +144,15 @@ _G.packer_plugins = {
     path = "/home/pedro/.local/share/nvim/site/pack/packer/start/nvim-lspconfig",
     url = "https://github.com/neovim/nvim-lspconfig"
   },
-  ["oceanic-next"] = {
+  ["nvim-treesitter"] = {
     loaded = true,
-    path = "/home/pedro/.local/share/nvim/site/pack/packer/start/oceanic-next",
-    url = "https://github.com/mhartington/oceanic-next"
+    path = "/home/pedro/.local/share/nvim/site/pack/packer/start/nvim-treesitter",
+    url = "https://github.com/nvim-treesitter/nvim-treesitter"
+  },
+  ["nvim-treesitter-textobjects"] = {
+    loaded = true,
+    path = "/home/pedro/.local/share/nvim/site/pack/packer/start/nvim-treesitter-textobjects",
+    url = "https://github.com/nvim-treesitter/nvim-treesitter-textobjects"
   },
   ["packer.nvim"] = {
     loaded = true,
@@ -164,10 +164,15 @@ _G.packer_plugins = {
     path = "/home/pedro/.local/share/nvim/site/pack/packer/start/plenary.nvim",
     url = "https://github.com/nvim-lua/plenary.nvim"
   },
-  tagbar = {
+  sonokai = {
     loaded = true,
-    path = "/home/pedro/.local/share/nvim/site/pack/packer/start/tagbar",
-    url = "https://github.com/preservim/tagbar"
+    path = "/home/pedro/.local/share/nvim/site/pack/packer/start/sonokai",
+    url = "https://github.com/sainnhe/sonokai"
+  },
+  ["symbols-outline.nvim"] = {
+    loaded = true,
+    path = "/home/pedro/.local/share/nvim/site/pack/packer/start/symbols-outline.nvim",
+    url = "https://github.com/simrat39/symbols-outline.nvim"
   },
   tcomment_vim = {
     loaded = true,
@@ -184,30 +189,25 @@ _G.packer_plugins = {
     path = "/home/pedro/.local/share/nvim/site/pack/packer/start/telescope.nvim",
     url = "https://github.com/nvim-telescope/telescope.nvim"
   },
-  ["tender.vim"] = {
-    loaded = true,
-    path = "/home/pedro/.local/share/nvim/site/pack/packer/start/tender.vim",
-    url = "https://github.com/jacoborus/tender.vim"
-  },
-  ["toggleterm.nvim"] = {
-    loaded = true,
-    path = "/home/pedro/.local/share/nvim/site/pack/packer/start/toggleterm.nvim",
-    url = "https://github.com/akinsho/toggleterm.nvim"
-  },
-  ["tokyonight.nvim"] = {
-    loaded = true,
-    path = "/home/pedro/.local/share/nvim/site/pack/packer/start/tokyonight.nvim",
-    url = "https://github.com/folke/tokyonight.nvim"
-  },
   ["vim-closetag"] = {
     loaded = true,
     path = "/home/pedro/.local/share/nvim/site/pack/packer/start/vim-closetag",
     url = "https://github.com/alvan/vim-closetag"
   },
+  ["vim-elixir"] = {
+    loaded = true,
+    path = "/home/pedro/.local/share/nvim/site/pack/packer/start/vim-elixir",
+    url = "https://github.com/elixir-editors/vim-elixir"
+  },
   ["vim-gitgutter"] = {
     loaded = true,
     path = "/home/pedro/.local/share/nvim/site/pack/packer/start/vim-gitgutter",
     url = "https://github.com/airblade/vim-gitgutter"
+  },
+  ["vim-lion"] = {
+    loaded = true,
+    path = "/home/pedro/.local/share/nvim/site/pack/packer/start/vim-lion",
+    url = "https://github.com/tommcdo/vim-lion"
   },
   ["vim-repeat"] = {
     loaded = true,
@@ -228,15 +228,17 @@ _G.packer_plugins = {
     loaded = true,
     path = "/home/pedro/.local/share/nvim/site/pack/packer/start/vim-vsnip",
     url = "https://github.com/hrsh7th/vim-vsnip"
-  },
-  ["vim-vsnip-integ"] = {
-    loaded = true,
-    path = "/home/pedro/.local/share/nvim/site/pack/packer/start/vim-vsnip-integ",
-    url = "https://github.com/hrsh7th/vim-vsnip-integ"
   }
 }
 
 time([[Defining packer_plugins]], false)
+
+_G._packer.inside_compile = false
+if _G._packer.needs_bufread == true then
+  vim.cmd("doautocmd BufRead")
+end
+_G._packer.needs_bufread = false
+
 if should_profile then save_profiles() end
 
 end)
