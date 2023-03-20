@@ -10,6 +10,7 @@ local map = vim.keymap.set
 
 -- Space do nothing
 map({"n", "v"}, "<Space>", "<Nop>", { silent = true })
+map({"n", "v"}, "<C-Space>", "<Nop>", { silent = true })
 
 -- Function Keys
 map("n", "<F1>", ":vertical help ")
@@ -27,7 +28,7 @@ map("n", "<leader>nd", ":!mkdir -p ")
 map("n", "U", "<C-r>")
 
 -- Reset command-line
-map("n", "<C-c>", "<cmd>set cmdheight=1<Enter><cmd>echo ''<Enter>");
+map("n", "<C-c>", "<cmd>set cmdheight=1<Enter><cmd>echo ''<Enter>")
 
 -- Closer del
 map("i", "<C-l>", "<Del>")
