@@ -17,7 +17,7 @@ map("n", "<F1>", ":vertical help ")
 map("n", "<F2>", ":verbose map ")
 
 -- File Explorer
-map("n", "<leader>fe", ":Ex<CR>")
+map("n", "<leader>fe", vim.cmd.Explore)
 map("n", "<leader>fp", ":find ")
 
 -- Create File
@@ -34,13 +34,14 @@ map("n", "<C-c>", "<cmd>set cmdheight=1<Enter><cmd>echo ''<Enter>")
 map("i", "<C-l>", "<Del>")
 
 -- Insert lines/spaces in Normal Mode
-map("n", "<CR>", "i<CR><Esc>")
-map("n", "<A-j>", "o<Esc>k")
-map("n", "<A-k>", "O<Esc>j")
+map("n", "<A-j>", "i<CR><Esc>")
+-- map("n", "<CR>", "i<CR><Esc>")
+-- map("n", "<A-j>", "o<Esc>k")
+-- map("n", "<A-k>", "O<Esc>j")
 
 -- Move Text
--- map("v", "<C-j>", ":move '>+1<CR>gv-gv", { silent = true })
--- map("v", "<C-k>", ":move '>-2<CR>gv-gv", { silent = true })
+map("v", "J", ":move '>+1<CR>gv=gv", { silent = true })
+map("v", "K", ":move '<-2<CR>gv=gv", { silent = true })
 map("v", ">", ">gv", { silent = true })
 map("v", "<", "<gv", { silent = true })
 
@@ -55,8 +56,8 @@ map("v", "<leader>sd", "\"+d")
 map("n", "<leader>sp", "\"+p")
 
 -- Quickfix
-map("n", "<A-n>", "<cmd>cnext<Enter>")
-map("n", "<A-p>", "<cmd>cprev<Enter>")
+map("n", "<A-n>", vim.cmd.cnext)
+map("n", "<A-p>", vim.cmd.cprev)
 
 -- ### MyPlugin: Closing cheracter #############################################
 map("i", "(<CR>", "(<CR>)<Esc>ko")

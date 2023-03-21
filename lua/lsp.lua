@@ -2,15 +2,18 @@ local map = vim.keymap.set
 
 -- Mappings --------------------------------------------------------------------
 
-map("n", "<F11>",      "<cmd>LspRestart<Enter><cmd>echo 'LSP Restarted'<Enter>")
-map("n", "<F12>",      "<cmd>LspInfo<Enter>",     { silent = true })
-map("n", "<C-p>",      vim.diagnostic.goto_prev,  { silent = true })
-map("n", "<C-n>",      vim.diagnostic.goto_next,  { silent = true })
+-- map("n", "<F11>",      "<cmd>LspRestart<Enter><cmd>echo 'LSP Restarted'<Enter>")
+map("n", "<F11>", function()
+    vim.cmd.LspRestart()
+    vim.cmd.echo('"Lsp Restarted"')
+end)
+map("n", "<F12>", vim.cmd.LspInfo, { silent = true })
+map("n", "<C-p>", vim.diagnostic.goto_prev,  { silent = true })
+map("n", "<C-n>", vim.diagnostic.goto_next,  { silent = true })
 map("n", "<leader>do", vim.diagnostic.open_float, { silent = true })
 map("n", "<leader>dl", vim.diagnostic.setloclist, { silent = true })
 map("n", "<leader>dd", vim.diagnostic.disable,    { silent = true })
 map("n", "<leader>de", vim.diagnostic.enable,     { silent = true })
-map("n", "<leader>cf", vim.lsp.buf.format)
 
 -- Config ----------------------------------------------------------------------
 
@@ -40,6 +43,7 @@ local on_attach = function(client, bufnr)
     map("n", "<leader>rn", vim.lsp.buf.rename, bufopts)
 
     map("n", "<leader>ca", vim.lsp.buf.code_action, bufopts)
+    map("n", "<leader>cf", vim.lsp.buf.format, bufopts)
 end
 
 -- Completion ------------------------------------------------------------------
@@ -54,7 +58,7 @@ local capabilities = require("cmp_nvim_lsp").default_capabilities()
 
 -- Servers ---------------------------------------------------------------------
 
-local lsp = require "lspconfig"
+local lsp = require("lspconfig")
 
 -- C/C++
 lsp.clangd.setup({

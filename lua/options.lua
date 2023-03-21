@@ -1,6 +1,7 @@
 --[[
     VIM OPTIONS   :help options
 ]]
+
 local options = {
     -- Indentation and tabing
     expandtab   = true,
