@@ -38,16 +38,22 @@ cmp.setup({
                 fallback()
             end
         end,
+        ["<C-j>"] = cmp.mapping.complete({
+            config = {
+                sources = cmp.config.sources({
+                    { name = "nvim_lsp" },
+                })
+            }
+        }),
     }),
     sources = cmp.config.sources({
         { name = "vsnip"    },
         { name = "buffer"   },
-        { name = "nvim_lsp" },
+        -- { name = "nvim_lsp" },
     })
 })
 
--- vim.keymap.set("i", "<C-x><C-o>", "<cmd>lua require('cmp').complete()<CR>")
-vim.keymap.set("i", "<C-Space>", "<cmd>lua require('cmp').complete()<CR>")
+vim.keymap.set("i", "<C-Space>", function() cmp.complete() end)
 
 -- Use cmdline & path source for ":" (if you enabled `native_menu`, this won"t work anymore).
 -- cmp.setup.cmdline(":", {
