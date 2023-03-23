@@ -1,15 +1,17 @@
 vim.opt.background = "dark"
 
--- The configuration options should be placed before `colorscheme sonokai`.
-vim.cmd [[ let g:sonokai_style = 'shusia' ]]
-vim.cmd [[ let g:sonokai_better_performance = 1 ]]
-vim.cmd [[ let g:sonokai_transparent_background = 2 ]]
+-- This configuration options should be placed before `colorscheme sonokai`.
+vim.g.sonokai_style = "shusia"
+vim.g.sonokai_better_performance = 1
+vim.g.sonokai_transparent_background = 2
 
-vim.cmd [[ colorscheme sonokai ]]
+vim.cmd.colorscheme("sonokai")
+
+local highlight = vim.api.nvim_set_hl
 
 -- Red Highlight the Matching Scope Character () [] {} ...
-vim.cmd [[ highlight MatchParen gui=bold guifg=#ff3333 guibg=None ]]
+highlight(0, "MatchParen", { bold = true, fg = "#ff3333", bg = "none" })
 
 -- Blue and Gray for Tabline (Overriding colorscheme ones)
-vim.cmd [[ highlight TablineSel guifg=#88ffff guibg=#323232 ]]
-vim.cmd [[ highlight Tabline    guifg=#989898 guibg=#252525 ]]
+highlight(0, "TablineSel", { fg = "#88ffff", bg = "#323232" })
+highlight(0, "Tabline", { fg = "#989898", bg = "#252525" })

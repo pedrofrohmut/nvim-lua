@@ -1,3 +1,3 @@
 require("symbols-outline").setup()
 
-vim.keymap.set("n", "<F8>", ":SymbolsOutline<Enter>", { silent = true })
+vim.keymap.set("n", "<F8>", vim.cmd.SymbolsOutline, { silent = true })

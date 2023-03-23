@@ -33,10 +33,6 @@ require("telescope").setup({
 
 require("telescope").load_extension("fzf")
 
-
-
-local M = {}
-
 local no_preview = function()
     return require("telescope.themes").get_dropdown({
         borderchars = {
@@ -51,23 +47,23 @@ local no_preview = function()
     })
 end
 
-M.find_in_file = function()
-    return require("telescope.builtin").current_buffer_fuzzy_find(no_preview())
-end
+local builtin = require("telescope.builtin")
 
-M.find_files = function()
-    return require("telescope.builtin").find_files(no_preview())
-end
+vim.keymap.set("n", "<leader>ff", builtin.find_files)
+vim.keymap.set("n", "<leader>fg", builtin.live_grep)
+vim.keymap.set("n", "<leader>fb", builtin.buffers)
+vim.keymap.set("n", "<leader>fh", builtin.help_tags)
+vim.keymap.set("n", "<leader>fd", builtin.diagnostics)
+vim.keymap.set("n", "<leader>fk", builtin.keymaps)
 
+vim.keymap.set("n", "<leader>fs", function()
+	builtin.grep_string({ search = vim.fn.input("Grep > ") });
+end)
 
-vim.keymap.set("n", "<C-q>",
-    "<cmd>lua require('plugins.telescope').find_files()<Enter>")
-vim.keymap.set("n", "<leader>ff", "<cmd>Telescope find_files<Enter>")
-vim.keymap.set("n", "<leader>fg", "<cmd>Telescope live_grep<Enter>")
-vim.keymap.set("n", "<leader>fb", "<cmd>Telescope buffers<Enter>")
-vim.keymap.set("n", "<leader>fh", "<cmd>Telescope help_tags<Enter>")
-vim.keymap.set("n", "<leader>fd", "<cmd>Telescope diagnostics<Enter>")
-vim.keymap.set("n", "<C-f>",
-    "<cmd>lua require('plugins.telescope').find_in_file()<Enter>")
+vim.keymap.set("n", "<C-f>", function()
+    builtin.current_buffer_fuzzy_find(no_preview())
+end)
 
-return M
+vim.keymap.set("n", "<C-q>", function()
+    builtin.find_files(no_preview())
+end)
