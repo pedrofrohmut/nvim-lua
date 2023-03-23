@@ -8,9 +8,10 @@ vim.g.mapleader = " "
 
 local map = vim.keymap.set
 
--- Space do nothing
-map({"n", "v"}, "<Space>", "<Nop>", { silent = true })
+-- Do nothing
+map({"n", "v"}, "<Space>",   "<Nop>", { silent = true })
 map({"n", "v"}, "<C-Space>", "<Nop>", { silent = true })
+map("i",        "<C-j>",     "<Nop>")
 
 -- Function Keys
 map("n", "<F1>", ":vertical help ")
@@ -34,7 +35,8 @@ map("n", "<C-c>", "<cmd>set cmdheight=1<Enter><cmd>echo ''<Enter>")
 map("i", "<C-l>", "<Del>")
 
 -- Insert lines/spaces in Normal Mode
-map("n", "<A-j>", "i<CR><Esc>")
+-- <C-Space> instead of <Enter> so you can enter in floating windows
+map("n", "<C-Space>", "i<CR><Esc>")
 -- map("n", "<CR>", "i<CR><Esc>")
 -- map("n", "<A-j>", "o<Esc>k")
 -- map("n", "<A-k>", "O<Esc>j")

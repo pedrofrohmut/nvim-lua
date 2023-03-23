@@ -1,13 +1,16 @@
--- press <Tab> to expand or jump in a snippet. These can also be mapped separately
--- via <Plug>luasnip-expand-snippet and <Plug>luasnip-jump-next.
-vim.cmd [[ imap <silent><expr> <Tab> luasnip#expand_or_jumpable() ? '<Plug>luasnip-expand-or-jump' : '<Tab>' ]]
+local ok, luasnip = pcall(require, "luasnip")
+if not ok then
+    error("Could not find luasnip")
+end
 
--- -1 for jumping backwards.
-vim.cmd [[ inoremap <silent> <S-Tab> <cmd>lua require'luasnip'.jump(-1)<Cr> ]]
+vim.keymap.set("i", "<A-j>", function()
+    if luasnip.expand_or_jumpable() then
+        luasnip.jump(1) -- Forward
+    end
+end)
 
-vim.cmd [[ snoremap <silent> <Tab> <cmd>lua require('luasnip').jump(1)<Cr> ]]
-vim.cmd [[ snoremap <silent> <S-Tab> <cmd>lua require('luasnip').jump(-1)<Cr> ]]
-
--- For changing choices in choiceNodes (not strictly necessary for a basic setup).
-vim.cmd [[ imap <silent><expr> <C-E> luasnip#choice_active() ? '<Plug>luasnip-next-choice' : '<C-E>' ]]
-vim.cmd [[ smap <silent><expr> <C-E> luasnip#choice_active() ? '<Plug>luasnip-next-choice' : '<C-E>' ]]
+vim.keymap.set("i", "<A-k>", function()
+    if luasnip.expand_or_jumpable() then
+        luasnip.jump(-1) -- Backwards
+    end
+end)
