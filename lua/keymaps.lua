@@ -33,6 +33,7 @@ map("n", "<C-c>", "<cmd>set cmdheight=1<Enter><cmd>echo ''<Enter>")
 
 -- Closer del
 map("i", "<C-l>", "<Del>")
+map("i", "<C-h>", "<BS>")
 
 -- Insert lines/spaces in Normal Mode
 -- <C-Space> instead of <Enter> so you can enter in floating windows
