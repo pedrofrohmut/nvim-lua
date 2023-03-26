@@ -50,7 +50,7 @@ local on_attach = function(client, bufnr)
     map("n", "gD", vim.lsp.buf.declaration, bufopts)
 
     map("n", "K", vim.lsp.buf.hover, bufopts)
-    map("n", "<A-k>", vim.lsp.buf.signature_help, bufopts)
+    -- map("n", "<A-k>", vim.lsp.buf.signature_help, bufopts)
 
     map("n", "<leader>rn", vim.lsp.buf.rename, bufopts)
 
