@@ -12,6 +12,7 @@ local map = vim.keymap.set
 map({"n", "v"}, "<Space>",   "<Nop>", { silent = true })
 map({"n", "v"}, "<C-Space>", "<Nop>", { silent = true })
 map("i",        "<C-j>",     "<Nop>")
+map("n",        "R",         "<Nop>") -- Disable WTF mode
 
 -- Function Keys
 map("n", "<F1>", ":vertical help ")
@@ -63,6 +64,8 @@ map("n", "<A-n>", vim.cmd.cnext)
 map("n", "<A-p>", vim.cmd.cprev)
 
 -- ### MyPlugin: Closing cheracter #############################################
+
+-- Closing character with <Enter> / <CR>
 map("i", "(<CR>", "(<CR>)<Esc>ko")
 map("i", "[<CR>", "[<CR>]<Esc>ko")
 map("i", "[[<CR>", "[[<CR>]]<Esc>ko")
@@ -70,6 +73,13 @@ map("i", "{<CR>", "{<CR>}<Esc>ko")
 map("i", "({<CR>", "({<CR>})<Esc>ko")
 map("i", "`<CR>",  "<CR>`<Esc>ko<Tab>")
 map("i", "(`<CR>", "(``)<Esc>hi<CR><Esc>ko<Tab>")
+
+-- Add spaces inside closing character
+map("i", "( ", "(  )<Esc>hi")
+map("i", "[ ", "[  ]<Esc>hi")
+map("i", "[[ ", "[[  ]]<Esc>hi")
+map("i", "{ ", "{  }<Esc>hi")
+map("i", "({ ", "({  })<Esc>hi")
 
 -- ### Buffers #################################################################
 
