@@ -19,6 +19,7 @@ return require("packer").startup(function(use)
 
     -- LSP Config
     use "neovim/nvim-lspconfig"
+    use "ray-x/lsp_signature.nvim"
 
     -- Language Servers
     use "williamboman/mason.nvim"

@@ -19,14 +19,14 @@ cmp.setup({
     })
 })
 
-local simple_completion = {
-    config = {
-        sources = cmp.config.sources({
-            { name = "buffer" },
-            { name = "path" },
-        })
-    }
-}
+-- local simple_completion = {
+--     config = {
+--         sources = cmp.config.sources({
+--             { name = "buffer" },
+--             { name = "path" },
+--         })
+--     }
+-- }
 
 local lsp_completion = {
     config = {
@@ -45,22 +45,22 @@ local snip_completion = {
     }
 }
 
-vim.keymap.set("i", "<C-n>", function()
-    if cmp.visible() then
-        cmp.select_next_item()
-    else
-        cmp.complete(simple_completion)
-    end
-end)
-
-
-vim.keymap.set("i", "<C-p>", function()
-    if cmp.visible() then
-        cmp.select_prev_item()
-    else
-        cmp.completion(simple_completion)
-    end
-end)
+-- vim.keymap.set("i", "<C-n>", function()
+--     if cmp.visible() then
+--         cmp.select_next_item()
+--     else
+--         cmp.complete(simple_completion)
+--     end
+-- end)
+--
+--
+-- vim.keymap.set("i", "<C-p>", function()
+--     if cmp.visible() then
+--         cmp.select_prev_item()
+--     else
+--         cmp.completion(simple_completion)
+--     end
+-- end)
 
 
 vim.keymap.set("i", "<C-j>", function()

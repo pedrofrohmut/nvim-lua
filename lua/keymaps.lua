@@ -101,9 +101,7 @@ map("n", "<leader>th", ":-tabmove<CR>", { silent = true })
 map("n", "<leader>tl", ":+tabmove<CR>", { silent = true })
 
 -- Go To - Next/Prev
-map("n", "<leader>tn", ":tabnext<CR>",     { silent = true })
 map("n", "<C-l>",      ":tabnext<CR>",     { silent = true })
-map("n", "<leader>tp", ":tabprevious<CR>", { silent = true })
 map("n", "<C-h>",      ":tabprevious<CR>", { silent = true })
 
 -- ### Jumping/Scrolling #######################################################
@@ -124,10 +122,6 @@ map("n", "<Down>", "3<C-w>-")
 -- Resize Vertical
 map("n", "<Left>",  "3<C-w>>")
 map("n", "<Right>", "3<C-w><")
-
--- Splits
-map("n", "<leader>ws", "<C-w>s")
-map("n", "<leader>wv", "<C-w>v")
 
 -- Change current window to a new tab
 map("n", "<leader>wt", "<C-w>T")

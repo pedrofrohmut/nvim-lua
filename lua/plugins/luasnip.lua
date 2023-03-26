@@ -8,18 +8,14 @@ require("luasnip.loaders.from_lua").lazy_load({
 
 local ls = require("luasnip")
 
-vim.keymap.set("i", "<A-j>", function(fallback)
+vim.keymap.set("i", "<A-j>", function()
     if ls.expand_or_jumpable() then
         ls.jump(1) -- Forward
-    else
-        fallback()
     end
 end)
 
-vim.keymap.set("i", "<A-k>", function(fallback)
+vim.keymap.set("i", "<A-k>", function()
     if ls.expand_or_jumpable() then
         ls.jump(-1) -- Backwards
-    else
-        fallback()
     end
 end)
