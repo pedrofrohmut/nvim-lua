@@ -13,6 +13,8 @@ vim.g.NERDTreeIgnore = {
     ".elixir_ls",
     "\\.out$",
     "\\.exe$",
+    ".lock",
+    "package-lock.json",
 }
 vim.g.NERDTreeWinSize     = 36
 vim.g.NERDTreeHijackNetrw = 1
