@@ -9,8 +9,8 @@ end)
 map("n", "<F12>", vim.cmd.LspInfo, { silent = true })
 map("n", "<C-p>", vim.diagnostic.goto_prev,  { silent = true })
 map("n", "<C-n>", vim.diagnostic.goto_next,  { silent = true })
--- map("n", "<leader>do", vim.diagnostic.open_float, { silent = true })
--- map("n", "<leader>dl", vim.diagnostic.setloclist, { silent = true })
+map("n", "<leader>do", vim.diagnostic.open_float, { silent = true })
+map("n", "<leader>dl", vim.diagnostic.setloclist, { silent = true })
 map("n", "<leader>dd", vim.diagnostic.disable,    { silent = true })
 map("n", "<leader>de", vim.diagnostic.enable,     { silent = true })
 
@@ -31,26 +31,45 @@ local on_attach = function(client, bufnr)
     -- Enable completion triggered by <c-x><c-o>
     vim.api.nvim_buf_set_option(bufnr, "omnifunc", "v:lua.vim.lsp.omnifunc")
 
-    local ok_status, builtin = pcall(require, "telescope.builtin")
+    local ok_telescope, builtin = pcall(require, "telescope.builtin")
+    -- TODO: make telescope the default and regular vim the fallback instead of having both
+    if ok_telescope then
+        map("n", "gd", function()
+            if not pcall(builtin.lsp_definitions) then
+                vim.lsp.buf.definition()
+            end
+        end, bufopts)
 
-    if not ok_status then
-        map("n", "gd", vim.lsp.buf.definition, bufopts)
-        map("n", "gt", vim.lsp.buf.type_definition, bufopts)
-        map("n", "gh", vim.lsp.buf.implementation, bufopts) -- gi is too awesome not replace
-        map("n", "gr", vim.lsp.buf.references, bufopts)
+        map("n", "gt", function()
+            if not pcall(builtin.lsp_type_definitions) then
+                vim.lsp.buf.type_definition()
+            end
+        end, bufopts)
+
+        map("n", "gh", function()
+            if not pcall(builtin.lsp_implementations) then
+                vim.lsp.buf.implementation()
+            end
+        end, bufopts)
+
+        map("n", "gr", function()
+            if not pcall(builtin.lsp_references) then
+                vim.lsp.buf.references()
+            end
+        end, bufopts)
     else
-        map("n", "gd", builtin.lsp_definitions, bufopts)
-        map("n", "gt", builtin.lsp_type_definitions, bufopts)
-        map("n", "gh", builtin.lsp_implementations, bufopts)
-        map("n", "gr", builtin.lsp_references, bufopts)
+        print("Could not import Telescope Builtin")
     end
 
+    -- map("n", "<leader>gd", vim.lsp.buf.definition, bufopts)
+    -- map("n", "<leader>gt", vim.lsp.buf.type_definition, bufopts)
+    -- map("n", "<leader>gh", vim.lsp.buf.implementation, bufopts) -- gi is too awesome not replace
+    -- map("n", "<leader>gr", vim.lsp.buf.references, bufopts)
+
     -- Mappings.
-    -- See `:help vim.lsp.*` for documentation on any of the below functions
     map("n", "gD", vim.lsp.buf.declaration, bufopts)
 
     map("n", "K", vim.lsp.buf.hover, bufopts)
-    -- map("n", "<A-k>", vim.lsp.buf.signature_help, bufopts)
 
     map("n", "<leader>rn", vim.lsp.buf.rename, bufopts)
 

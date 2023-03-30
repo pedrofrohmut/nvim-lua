@@ -10,3 +10,5 @@ local cfg = {
 }
 
 require("lsp_signature").setup(cfg)
+
+-- check ./lualine.lua to see to functions that show signature in the bar

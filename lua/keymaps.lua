@@ -37,11 +37,7 @@ map("i", "<C-l>", "<Del>")
 map("i", "<C-h>", "<BS>")
 
 -- Insert lines/spaces in Normal Mode
--- <C-Space> instead of <Enter> so you can enter in floating windows
-map("n", "<C-Space>", "i<CR><Esc>")
--- map("n", "<CR>", "i<CR><Esc>")
--- map("n", "<A-j>", "o<Esc>k")
--- map("n", "<A-k>", "O<Esc>j")
+map("n", "<A-Space>", "i<CR><Esc>")
 
 -- Move Text
 map("v", "J", ":move '>+1<CR>gv=gv", { silent = true })
@@ -148,6 +144,9 @@ map("n", "<leader>wo", "<cmd>tabonly<Enter><cmd>only<Enter>", { silent = true })
 -- Find-Replace
 map("n", "<leader>ss", ":%s/")
 map("v", "<leader>ss", ":s/")
+
+-- Sort
+map("v", "<leader>sp", ":sort<Enter>")
 
 local f = require("utils.string-functions")
 
