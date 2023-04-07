@@ -137,7 +137,11 @@ map("n", "<Right>", "3<C-w><")
 map("n", "<leader>wt", "<C-w>T")
 
 -- Closes every other window and every other tab
-map("n", "<leader>wo", "<cmd>tabonly<Enter><cmd>only<Enter>", { silent = true })
+map("n", "<leader>wo", function()
+    vim.cmd.tabonly()
+    vim.cmd.only()
+    vim.cmd.echo("''")
+end)
 
 -- ### String Utils ###########################################################
 
