@@ -25,10 +25,14 @@ return require("packer").startup(function(use)
     use "williamboman/mason.nvim"
     use "williamboman/mason-lspconfig.nvim"
 
+    -- Formatter
+    use "jose-elias-alvarez/null-ls.nvim"
+
     -- Language Support
     use { "nvim-treesitter/nvim-treesitter", run = ":TSUpdate" }
     use "nvim-treesitter/nvim-treesitter-textobjects"
     use "elixir-editors/vim-elixir"
+    use "maxmellon/vim-jsx-pretty"
 
     -- Completion
     use "hrsh7th/cmp-nvim-lsp"
