@@ -22,7 +22,7 @@ return require("packer").startup(function(use)
     use "ray-x/lsp_signature.nvim"
 
     -- Language Servers
-    use "williamboman/mason.nvim"
+    use { "williamboman/mason.nvim", run = ":MasonUpdate" }
     use "williamboman/mason-lspconfig.nvim"
 
     -- Formatter

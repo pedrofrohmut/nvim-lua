@@ -140,7 +140,6 @@ lsp.lua_ls.setup({
 
 -- Typescript/Javascript
 lsp.tsserver.setup({
-    cmd = { "typescript-language-server" },
     on_attach = on_attach,
-    capabilities = capabilities,
+    capabilities = capabilities
 })

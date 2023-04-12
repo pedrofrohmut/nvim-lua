@@ -15,7 +15,9 @@ autocmd("FileType", {
 
 -- Set 2 for exceptions
 autocmd("FileType", {
-    group = "FileTypeCmds", pattern = {"html"}, command = "setlocal shiftwidth=2 "})
+    group = "FileTypeCmds",
+    pattern = {"html", "typescriptreact", "javascriptreact"},
+    command = "setlocal shiftwidth=2 "})
 
 -- Set cursorline on enter
 autocmd({ "VimEnter", "WinEnter", "BufWinEnter" }, {
