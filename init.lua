@@ -6,6 +6,7 @@ require "options"
 require "treesitter"
 
 require "plugins.autopairs"
+require "plugins.closetag"
 require "plugins.cmp"
 require "plugins.emmet"
 require "plugins.lsp-signature"

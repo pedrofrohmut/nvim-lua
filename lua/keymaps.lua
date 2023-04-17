@@ -37,7 +37,7 @@ map("i", "<C-l>", "<Del>")
 map("i", "<C-h>", "<BS>")
 
 -- Insert lines/spaces in Normal Mode
-map("n", "<A-Space>", "i<CR><Esc>")
+map("n", "<A-Enter>", "i<CR><Esc>")
 
 -- Move Text
 map("v", "J", ":move '>+1<CR>gv=gv", { silent = true })

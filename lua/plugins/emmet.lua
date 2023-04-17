@@ -1,7 +1,7 @@
 -- Emmet Config
 
 vim.g.user_emmet_mode = 'iv'
-vim.g.user_emmet_leader_key = '<c-\\>'
+vim.g.user_emmet_leader_key = '<C-y>'
 vim.api.nvim_create_autocmd("FileType", { pattern = "*", command = "EmmetInstall" })
 
 vim.keymap.set("i", "<C-Space>", "<Plug>(emmet-expand-abbr)", { silent = true })

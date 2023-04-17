@@ -30,9 +30,9 @@ return require("packer").startup(function(use)
 
     -- Language Support
     use { "nvim-treesitter/nvim-treesitter", run = ":TSUpdate" }
-    use "nvim-treesitter/nvim-treesitter-textobjects"
-    use "elixir-editors/vim-elixir"
     use "maxmellon/vim-jsx-pretty"
+    -- use "nvim-treesitter/nvim-treesitter-textobjects"
+    -- use "elixir-editors/vim-elixir"
 
     -- Completion
     use "hrsh7th/cmp-nvim-lsp"
@@ -41,6 +41,7 @@ return require("packer").startup(function(use)
     use "hrsh7th/nvim-cmp"
 
     -- Snips
+    use "mattn/emmet-vim"
     use "L3MON4D3/LuaSnip"
     use "saadparwaiz1/cmp_luasnip"
     use "rafamadriz/friendly-snippets"
@@ -65,13 +66,8 @@ return require("packer").startup(function(use)
     -- Jump plugin like small version of easy motion
     use "justinmk/vim-sneak"
 
-    -- Emmet - HTML JSX snippets
-    use "mattn/emmet-vim"
-
-    -- Auto close HTML tags
-    use "alvan/vim-closetag"
-
     -- Auto Pairs
+    use "alvan/vim-closetag"
     use "windwp/nvim-autopairs"
 
     -- EditorConfig

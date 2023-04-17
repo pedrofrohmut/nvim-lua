@@ -1,23 +1,20 @@
 local autocmd = vim.api.nvim_create_autocmd
 local augroup = vim.api.nvim_create_augroup
 
--- Groups
-augroup("FileTypeCmds", { clear = true })
-augroup("CursorLine", { clear = true })
-
 -- Remove auto insert comments next line
-autocmd("FileType", {
-    group = "FileTypeCmds", pattern = "*", command = "setlocal formatoptions-=cro" })
+autocmd("FileType", { pattern = "*", command = "setlocal formatoptions-=cro" })
 
 -- Set 4 indent to all files
-autocmd("FileType", {
-    group = "FileTypeCmds", pattern = "*", command = "setlocal shiftwidth=4" })
+autocmd("FileType", { pattern = "*", command = "set shiftwidth=4" })
+
+-- autocmd({"VimEnter", "WinEnter", "BufWinEnter"}, {
+--     pattern = "*", command = "setlocal shiftwidth=4" })
 
 -- Set 2 for exceptions
-autocmd("FileType", {
-    group = "FileTypeCmds",
-    pattern = {"html", "typescriptreact", "javascriptreact"},
-    command = "setlocal shiftwidth=2 "})
+-- autocmd("FileType", { pattern = {"html"}, command = "setlocal shiftwidth=2 "})
+
+-- CursorLine Group
+augroup("CursorLine", { clear = true })
 
 -- Set cursorline on enter
 autocmd({ "VimEnter", "WinEnter", "BufWinEnter" }, {
