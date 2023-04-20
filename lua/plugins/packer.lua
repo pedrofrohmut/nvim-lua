@@ -71,7 +71,7 @@ return require("packer").startup(function(use)
     use "windwp/nvim-autopairs"
 
     -- EditorConfig
-    use "editorconfig/editorconfig-vim"
+    -- use "editorconfig/editorconfig-vim"
 
     -- Surrounder for Simple Stuff
     use "tpope/vim-surround"

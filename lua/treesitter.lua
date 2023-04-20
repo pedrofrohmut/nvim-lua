@@ -3,7 +3,8 @@ require'nvim-treesitter.configs'.setup {
   ensure_installed = {
       "c", "cpp", "python", "rust",
       "vim", "lua", "c_sharp", "elixir",
-      "markdown", "bash"
+      "markdown", "bash",
+      "css", "html"
   },
 
   -- Install parsers synchronously (only applied to `ensure_installed`)
