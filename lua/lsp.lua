@@ -32,48 +32,36 @@ local on_attach = function(client, bufnr)
     -- Enable completion triggered by <c-x><c-o>
     vim.api.nvim_buf_set_option(bufnr, "omnifunc", "v:lua.vim.lsp.omnifunc")
 
-    local ok_telescope, builtin = pcall(require, "telescope.builtin")
-    -- TODO: make telescope the default and regular vim the fallback instead of having both
-    if ok_telescope then
-        map("n", "gd", function()
-            if not pcall(builtin.lsp_definitions) then
-                vim.lsp.buf.definition()
-            end
-        end, bufopts)
+    local telescope_builtin = require("telescope.builtin")
 
-        map("n", "gt", function()
-            if not pcall(builtin.lsp_type_definitions) then
-                vim.lsp.buf.type_definition()
-            end
-        end, bufopts)
+    map("n", "gd", function()
+        if not pcall(telescope_builtin.lsp_definitions) then
+            vim.lsp.buf.definition()
+        end
+    end, bufopts)
 
-        map("n", "gh", function()
-            if not pcall(builtin.lsp_implementations) then
-                vim.lsp.buf.implementation()
-            end
-        end, bufopts)
+    map("n", "gt", function()
+        if not pcall(telescope_builtin.lsp_type_definitions) then
+            vim.lsp.buf.type_definition()
+        end
+    end, bufopts)
 
-        map("n", "gr", function()
-            if not pcall(builtin.lsp_references) then
-                vim.lsp.buf.references()
-            end
-        end, bufopts)
-    else
-        print("Could not import Telescope Builtin")
-    end
+    map("n", "gh", function()
+        if not pcall(telescope_builtin.lsp_implementations) then
+            vim.lsp.buf.implementation()
+        end
+    end, bufopts)
 
-    -- map("n", "<leader>gd", vim.lsp.buf.definition, bufopts)
-    -- map("n", "<leader>gt", vim.lsp.buf.type_definition, bufopts)
-    -- map("n", "<leader>gh", vim.lsp.buf.implementation, bufopts) -- gi is too awesome not replace
-    -- map("n", "<leader>gr", vim.lsp.buf.references, bufopts)
+    map("n", "gr", function()
+        if not pcall(telescope_builtin.lsp_references) then
+            vim.lsp.buf.references()
+        end
+    end, bufopts)
 
     -- Mappings.
     map("n", "gD", vim.lsp.buf.declaration, bufopts)
-
     map("n", "K", vim.lsp.buf.hover, bufopts)
-
     map("n", "<leader>rn", vim.lsp.buf.rename, bufopts)
-
     map("n", "<leader>ca", vim.lsp.buf.code_action, bufopts)
 end
 
@@ -89,6 +77,12 @@ local lsp = require("lspconfig")
 -- C/C++
 lsp.clangd.setup({
     cmd = { "clangd" },
+    on_attach = on_attach,
+    capabilities = capabilities,
+})
+
+-- CSS
+lsp.cssls.setup({
     on_attach = on_attach,
     capabilities = capabilities,
 })
