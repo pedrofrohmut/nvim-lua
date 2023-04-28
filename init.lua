@@ -1,3 +1,12 @@
+--[[
+    This configuration is based on:
+        1. Neovim from scratch by chris@machine
+        2. The Primeagen videos
+        3. My own vim configuration with vimscript
+        4. Tj DeVries yt-channel
+        5. For the plugins theirs respective Readmes and help
+]]--
+
 require "autocmds"
 require "colors"
 require "keymaps"
