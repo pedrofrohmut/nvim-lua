@@ -8,11 +8,11 @@ vim.g.mapleader = " "
 
 local map = vim.keymap.set
 
--- Do nothing
+-- Unsetters: Do nothing to remove unwanted default behavior
 map({"n", "v"}, "<Space>",   "<Nop>", { silent = true })
-map({"n", "v"}, "<C-Space>", "<Nop>", { silent = true })
 map("i",        "<C-j>",     "<Nop>")
 map("n",        "R",         "<Nop>") -- Disable WTF mode
+map({"n", "v"}, "<C-Space>", "<Nop>", { silent = true })
 
 -- Function Keys
 map("n", "<F1>", ":vertical help ")
@@ -37,11 +37,18 @@ map("i", "<C-l>", "<Del>")
 map("i", "<C-h>", "<BS>")
 
 -- Insert lines/spaces in Normal Mode
-map("n", "<A-Enter>", "i<CR><Esc>")
+map("n", "<Enter>", "i<CR><Esc>")
+-- Normal Enter/CR when needed
+map("n", "<A-Enter>", "<CR>")
 
--- Move Text
+-- Insert spaces in normal mode
+map("n", "<C-Space>", "i<Space><Esc>l")
+
+-- Move Text (by Primeagen)
 map("v", "J", ":move '>+1<CR>gv=gv", { silent = true })
 map("v", "K", ":move '<-2<CR>gv=gv", { silent = true })
+
+-- Auto reselect visual mode when indenting (by Brodie Robertson)
 map("v", ">", ">gv", { silent = true })
 map("v", "<", "<gv", { silent = true })
 
@@ -70,7 +77,7 @@ map("i", "({<CR>", "({<CR>})<Esc>ko")
 map("i", "`<CR>",  "<CR>`<Esc>ko<Tab>")
 map("i", "(`<CR>", "(``)<Esc>hi<CR><Esc>ko<Tab>")
 
--- Add spaces inside closing character
+-- Add spaces inside closing character (lacking in autopairs plugin)
 map("i", "( ", "(  )<Esc>hi")
 map("i", "[ ", "[  ]<Esc>hi")
 map("i", "[[ ", "[[  ]]<Esc>hi")
@@ -81,11 +88,9 @@ map("i", "({ ", "({  })<Esc>hi")
 
 -- Next
 map("n", "<leader>bn", ":bnext<CR>", { silent = true })
-map("n", "<leader>bl", ":bnext<CR>", { silent = true })
 
 -- Previous
 map("n", "<leader>bp", ":bprevious<CR>", { silent = true })
-map("n", "<leader>bh", ":bprevious<CR>", { silent = true })
 
 -- Utils
 map("n", "<leader>bb", ":buffers<CR>")
@@ -119,6 +124,7 @@ map("n", "<C-j>", "12<C-e>")
 map("n", "<C-d>", "28<C-e>M")
 map("n", "<C-u>", "28<C-y>M")
 
+-- Center when jumping
 map("n", "G", "Gzz")
 map("n", "`0", "`0zz")
 map("n", "'0", "'0zz")
