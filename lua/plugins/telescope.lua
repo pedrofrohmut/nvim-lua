@@ -12,8 +12,8 @@ require("telescope").setup({
         },
         mappings = {
             i = {
-                ["<C-j>"] = actions.move_selection_next,
-                ["<C-k>"] = actions.move_selection_previous,
+                -- ["<C-j>"] = actions.move_selection_next,
+                -- ["<C-k>"] = actions.move_selection_previous,
                 ["<C-s>"] = actions.file_split,
                 ["<C-v>"] = actions.file_vsplit,
             },
@@ -60,7 +60,8 @@ vim.keymap.set("n", "<leader>fs", function()
 end)
 
 vim.keymap.set("n", "<C-f>", function()
-    builtin.current_buffer_fuzzy_find(no_preview())
+    -- builtin.current_buffer_fuzzy_find(no_preview())
+    builtin.current_buffer_fuzzy_find()
 end)
 
 vim.keymap.set("n", "<C-q>", function()
