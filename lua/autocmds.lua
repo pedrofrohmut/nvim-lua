@@ -13,8 +13,8 @@ autocmd("FileType", {
     group = "FileTypeGroup", pattern = "*", command = "setlocal shiftwidth=4" })
 
 -- Set 2 for exceptions
-autocmd("FileType", {
-    group = "FileTypeGroup", pattern = {"html"}, command = "setlocal shiftwidth=2 "})
+-- autocmd("FileType", {
+--     group = "FileTypeGroup", pattern = {"html"}, command = "setlocal shiftwidth=2 "})
 
 -- CursorLine Group
 augroup("CursorLine", { clear = true })
