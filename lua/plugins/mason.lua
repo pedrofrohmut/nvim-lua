@@ -5,6 +5,7 @@ require("mason-lspconfig").setup({
         "clangd",        -- C/C++
         "cssls",         -- CSS
         "elixirls",      -- Elixir
+        "hls",           -- Haskell
         "lua_ls",        -- Lua
         "omnisharp",     -- CSharp
         "pyright",       -- Python

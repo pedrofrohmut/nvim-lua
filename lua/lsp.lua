@@ -94,6 +94,12 @@ lsp.elixirls.setup({
     capabilities = capabilities,
 })
 
+-- Haskell
+lsp.hls.setup({
+    on_attach = on_attach,
+    capabilities = capabilities,
+})
+
 -- CSharp
 lsp.omnisharp.setup({
     cmd = { "omnisharp" },
