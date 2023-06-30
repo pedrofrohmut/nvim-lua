@@ -162,3 +162,6 @@ local f = require("utils.string-functions")
 
 -- Remove trailing spaces
 map("n", "<leader>s1", f.remove_trailing)
+
+-- Insert 80 line
+map("n", "<leader>sl", "a-<Esc>79.")
