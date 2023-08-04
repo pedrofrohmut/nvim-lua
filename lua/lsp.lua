@@ -96,7 +96,8 @@ lsp.elixirls.setup({
 
 -- Haskell
 lsp.hls.setup({
-    cmd = { "haskell-language-server-9.6.1" }, -- Default targeting non-existent version
+    cmd = { "haskell-language-server-wrapper", "--lsp" }, -- From docs
+    filetypes = { 'haskell', 'lhaskell', 'cabal' }, -- For version 1.9 or above
     on_attach = on_attach,
     capabilities = capabilities,
 })
