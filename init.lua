@@ -29,6 +29,7 @@ require "plugins.packer"
 require "plugins.sneak"
 require "plugins.surround"
 require "plugins.symbols-outline"
+require "plugins.tcomment"
 require "plugins.telescope"
 
 require "utils.runners"
