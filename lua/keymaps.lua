@@ -65,6 +65,8 @@ map("n", "<leader>sp", "\"+p")
 -- Quickfix
 map("n", "<A-n>", vim.cmd.cnext)
 map("n", "<A-p>", vim.cmd.cprev)
+map("n", "<A-c>", vim.cmd.cclose)
+map("n", "<A-o>", vim.cmd.copen)
 
 -- ### MyPlugin: Closing cheracter #############################################
 

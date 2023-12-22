@@ -56,9 +56,17 @@ vim.keymap.set("n", "<leader>fb", builtin.buffers)
 vim.keymap.set("n", "<leader>fh", builtin.help_tags)
 vim.keymap.set("n", "<leader>fk", builtin.keymaps)
 
-vim.keymap.set("n", "<leader>fs", function()
-	builtin.grep_string({ search = vim.fn.input("Grep > ") });
+-- Find files with hidden and gitignored
+vim.keymap.set("n", "<leader>fa", function()
+    builtin.find_files({ no_ignore = true, hidden = true })
 end)
+
+local grep_search = function()
+	builtin.grep_string({ search = vim.fn.input("Grep > ") });
+end
+
+vim.keymap.set("n", "<leader>fs", grep_search)
+vim.keymap.set("n", "<C-s>", grep_search)
 
 vim.keymap.set("n", "<C-f>", function()
     -- builtin.current_buffer_fuzzy_find(no_preview())
