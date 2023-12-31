@@ -1,0 +1,4 @@
+[ ] 1. Remove/Replace null-ls
+[ ] 2. Replace Vim-CloseTag
+[ ] 3. Check for update for Emmet plugin
+[ ] 4. Check replacement for Vim-Gitgutter

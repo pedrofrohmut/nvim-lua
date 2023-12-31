@@ -62,7 +62,8 @@ vim.keymap.set("n", "<leader>fa", function()
 end)
 
 local grep_search = function()
-	builtin.grep_string({ search = vim.fn.input("Grep > ") });
+	builtin.grep_string({ search = vim.fn.input("Grep > ") })
+    vim.cmd.echo("''")
 end
 
 vim.keymap.set("n", "<leader>fs", grep_search)

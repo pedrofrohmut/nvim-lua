@@ -6,6 +6,7 @@ require("mason-lspconfig").setup({
         "cssls",         -- CSS
         "elixirls",      -- Elixir
         "hls",           -- Haskell
+        "html",          -- HTML
         "lua_ls",        -- Lua
         "omnisharp",     -- CSharp
         "pyright",       -- Python

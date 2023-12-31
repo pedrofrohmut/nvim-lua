@@ -102,6 +102,26 @@ lsp.hls.setup({
     capabilities = capabilities,
 })
 
+-- HTML
+lsp.html.setup({
+    on_attach = on_attach,
+    capabilities = capabilities,
+})
+
+-- Lua
+lsp.lua_ls.setup({
+    cmd = { "lua-language-server" },
+    on_attach = on_attach,
+    settings = {
+        Lua = {
+            diagnostics = {
+                globals = { "vim", "use" }
+            }
+        }
+    },
+    capabilities = capabilities,
+})
+
 -- CSharp
 lsp.omnisharp.setup({
     cmd = { "omnisharp" },
@@ -122,20 +142,6 @@ lsp.rust_analyzer.setup({
     on_attach = on_attach,
     settings = {
         ["rust-analyzer"] = {},
-    },
-    capabilities = capabilities,
-})
-
--- -- Lua
-lsp.lua_ls.setup({
-    cmd = { "lua-language-server" },
-    on_attach = on_attach,
-    settings = {
-        Lua = {
-            diagnostics = {
-                globals = { "vim", "use" }
-            }
-        }
     },
     capabilities = capabilities,
 })
