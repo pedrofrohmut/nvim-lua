@@ -46,7 +46,7 @@ local on_attach = function(client, bufnr)
         end
     end, bufopts)
 
-    map("n", "gh", function()
+    map("n", "gi", function()
         if not pcall(telescope_builtin.lsp_implementations) then
             vim.lsp.buf.implementation()
         end
