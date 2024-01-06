@@ -45,8 +45,8 @@ map("n", "<A-Enter>", "<CR>")
 map("n", "<C-Space>", "i<Space><Esc>l")
 
 -- Move Text (by Primeagen)
-map("v", "J", ":move '>+1<CR>gv=gv", { silent = true })
-map("v", "K", ":move '<-2<CR>gv=gv", { silent = true })
+map("v", "<C-j>", ":move '>+1<CR>gv=gv", { silent = true })
+map("v", "<C-k>", ":move '<-2<CR>gv=gv", { silent = true })
 
 -- Auto reselect visual mode when indenting (by Brodie Robertson)
 map("v", ">", ">gv", { silent = true })

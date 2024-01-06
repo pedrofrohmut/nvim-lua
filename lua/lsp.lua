@@ -76,7 +76,7 @@ local lsp = require("lspconfig")
 
 -- C/C++
 lsp.clangd.setup({
-    cmd = { "clangd" },
+    -- cmd = { "clangd" },
     on_attach = on_attach,
     capabilities = capabilities,
 })
@@ -89,7 +89,7 @@ lsp.cssls.setup({
 
 -- Elixir
 lsp.elixirls.setup({
-    cmd = { "elixir-ls" },
+    -- cmd = { "elixir-ls" },
     on_attach = on_attach,
     capabilities = capabilities,
 })
@@ -110,7 +110,7 @@ lsp.html.setup({
 
 -- Lua
 lsp.lua_ls.setup({
-    cmd = { "lua-language-server" },
+    -- cmd = { "lua-language-server" },
     on_attach = on_attach,
     settings = {
         Lua = {
@@ -124,25 +124,25 @@ lsp.lua_ls.setup({
 
 -- CSharp
 lsp.omnisharp.setup({
-    cmd = { "omnisharp" },
+    -- cmd = { "omnisharp" },
     on_attach = on_attach,
     capabilities = capabilities,
 })
 
 -- Python
 lsp.pyright.setup({
-    cmd = { "pyright-langserver" },
+    -- cmd = { "pyright-langserver" },
     on_attach = on_attach,
     capabilities = capabilities,
 })
 
 -- -- Rust
 lsp.rust_analyzer.setup({
-    cmd = { "rust-analyzer" },
+    -- cmd = { "rust-analyzer" },
     on_attach = on_attach,
-    settings = {
-        ["rust-analyzer"] = {},
-    },
+    -- settings = {
+    --     ["rust-analyzer"] = {},
+    -- },
     capabilities = capabilities,
 })
 
