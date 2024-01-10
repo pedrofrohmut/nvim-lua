@@ -128,9 +128,13 @@ map("n", "<C-h>",      ":tabprevious<CR>", { silent = true })
 -- ### Jumping/Scrolling #######################################################
 
 -- To line keymaps, that I never use. To better moving
-map("n", "H", "k^") -- First character of previous line
-map("n", "L", "2$") -- Last character of next line
-map({"n", "v"}, "M", "%") -- Easier to press %
+map({"n", "v"}, "M",     "%")  -- Easier to press %
+map("n",        "H",     "^")  -- First non-blank character
+map("n",        "L",     "g_") -- Last non-blank character
+
+-- Emacs inspired maps
+map("n",        "<A-a>", "k^") -- First character of previous line
+map("n",        "<A-e>", "2$") -- Last character of next line
 
 -- Scrolling
 map("n", "<C-k>", "12<C-y>")
