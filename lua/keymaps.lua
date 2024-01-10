@@ -14,6 +14,9 @@ map("i",        "<C-j>",     "<Nop>")
 map("n",        "R",         "<Nop>") -- Disable WTF mode
 map({"n", "v"}, "<C-Space>", "<Nop>", { silent = true })
 
+-- Fix C-i so you can map Tab Key
+map("n", "<C-i>", "<C-i>")
+
 -- Function Keys
 map("n", "<F1>", ":vertical help ")
 map("n", "<F2>", ":verbose map ")
@@ -51,6 +54,9 @@ map("v", "<C-k>", ":move '<-2<CR>gv=gv", { silent = true })
 -- Auto reselect visual mode when indenting (by Brodie Robertson)
 map("v", ">", ">gv", { silent = true })
 map("v", "<", "<gv", { silent = true })
+
+-- Do not override current register on v_paste
+map("v", "p", [["_dP]])
 
 -- Easy Register Copy/Cut to x
 map("v", "<leader>xy", "\"xy")
@@ -111,13 +117,20 @@ map("n", "<leader>to", ":tabonly<CR>", { silent = true })
 
 -- Move Tabs - Left/Right
 map("n", "<leader>th", ":-tabmove<CR>", { silent = true })
+map("n", "<S-Tab>",    ":-tabmove<CR>", { silent = true })
 map("n", "<leader>tl", ":+tabmove<CR>", { silent = true })
+map("n", "<Tab>",      ":+tabmove<CR>", { silent = true })
 
 -- Go To - Next/Prev
 map("n", "<C-l>",      ":tabnext<CR>",     { silent = true })
 map("n", "<C-h>",      ":tabprevious<CR>", { silent = true })
 
 -- ### Jumping/Scrolling #######################################################
+
+-- To line keymaps, that I never use. To better moving
+map("n", "H", "k^") -- First character of previous line
+map("n", "L", "2$") -- Last character of next line
+map({"n", "v"}, "M", "%") -- Easier to press %
 
 -- Scrolling
 map("n", "<C-k>", "12<C-y>")
@@ -133,13 +146,11 @@ map("n", "'0", "'0zz")
 
 -- ### Windows #################################################################
 
--- Resize Horizontal
-map("n", "<Up>", "3<C-w>+")
-map("n", "<Down>", "3<C-w>-")
-
--- Resize Vertical
-map("n", "<Left>",  "3<C-w>>")
-map("n", "<Right>", "3<C-w><")
+-- Resizing
+map("n", "<A-k>", "3<C-w>+") -- Up
+map("n", "<A-j>", "3<C-w>-") -- Down
+map("n", "<A-h>",  "3<C-w>>") -- Left
+map("n", "<A-l>", "3<C-w><") -- Right
 
 -- Change current window to a new tab
 map("n", "<leader>wt", "<C-w>T")
