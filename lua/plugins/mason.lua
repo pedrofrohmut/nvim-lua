@@ -4,8 +4,8 @@ require("mason-lspconfig").setup({
     ensure_installed = {
         "clangd",        -- C/C++
         "cssls",         -- CSS
-        "elixirls",      -- Elixir
-        "hls",           -- Haskell
+        --"elixirls",      -- Elixir
+        --"hls",           -- Haskell
         "html",          -- HTML
         "lua_ls",        -- Lua
         "omnisharp",     -- CSharp

@@ -140,6 +140,9 @@ map("n",        "<A-e>", "2$") -- Last character of next line
 map("n", "<C-k>", "12<C-y>")
 map("n", "<C-j>", "12<C-e>")
 
+map("n", "s", "28<C-y>")
+map("n", "x", "28<C-e>")
+
 map("n", "<C-d>", "28<C-e>M")
 map("n", "<C-u>", "28<C-y>M")
 
@@ -165,6 +168,12 @@ map("n", "<leader>wo", function()
     vim.cmd.only()
     vim.cmd.echo("''")
 end)
+
+-- ### Sessions ################################################################
+
+map("n", "<leader>sm", ":mksession! .vim-session<Enter>:echo('session created')<Enter>")
+map("n", "<leader>so", ":source .vim-session<Enter>")
+map("n", "<leader>sx", ":! rm .vim-session")
 
 -- ### String Utils ###########################################################
 

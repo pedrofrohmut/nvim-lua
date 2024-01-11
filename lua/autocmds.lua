@@ -28,4 +28,4 @@ autocmd("WinLeave", {
     group = "CursorLine", pattern = "*", command = "setlocal nocursorline" })
 
 -- Remove Trailing White Spaces onSave (And dont show errors)
-autocmd("BufWritePre", { pattern = "*", command= ":%s/\\s\\+$//e" })
+autocmd("BufWritePre", { pattern = "*", command = ":%s/\\s\\+$//e" })
