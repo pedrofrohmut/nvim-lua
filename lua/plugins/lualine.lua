@@ -20,22 +20,23 @@ require("lualine").setup {
                 }
             }
         },
-        lualine_c = {
-            function()
-                ---@diagnostic disable-next-line: unused-local
-                local ok, _err =  pcall(require, "lsp_signature")
-                if not ok then
-                    return "no signature"
-                end
-                local signature = require("lsp_signature").status_line(100)
-                -- return sign.label .. " HELLO " .. sign.hint
-                if signature.label ~= "" then
-                    return signature.label
-                else
-                    return ""
-                end
-            end
-        },
+        lualine_c = {},
+        --lualine_c = {
+        --    function()
+        --        ---@diagnostic disable-next-line: unused-local
+        --        local ok, _err =  pcall(require, "lsp_signature")
+        --        if not ok then
+        --            return "no signature"
+        --        end
+        --        local signature = require("lsp_signature").status_line(100)
+        --        -- return sign.label .. " HELLO " .. sign.hint
+        --        if signature.label ~= "" then
+        --            return signature.label
+        --        else
+        --            return ""
+        --        end
+        --    end
+        --},
 
         -- Right Side x, y, z
         lualine_x = {
