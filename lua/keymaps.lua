@@ -140,9 +140,6 @@ map("n",        "<A-e>", "2$") -- Last character of next line
 map("n", "<C-k>", "12<C-y>")
 map("n", "<C-j>", "12<C-e>")
 
-map("n", "s", "28<C-y>")
-map("n", "x", "28<C-e>")
-
 map("n", "<C-d>", "28<C-e>M")
 map("n", "<C-u>", "28<C-y>M")
 
