@@ -16,6 +16,7 @@ vim.g.NERDTreeIgnore = {
     ".lock",
     "package-lock.json",
     ".expo",
+    "build"
 }
 vim.g.NERDTreeWinSize     = 36
 vim.g.NERDTreeHijackNetrw = 1

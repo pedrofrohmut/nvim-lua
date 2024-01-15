@@ -62,7 +62,14 @@ vim.keymap.set("n", "<leader>fa", function()
 end)
 
 local grep_search = function()
-	builtin.grep_string({ search = vim.fn.input("Grep > ") })
+    local ok_grep, err = pcall(function ()
+        builtin.grep_string({ search = vim.fn.input("Grep > ") })
+    end)
+
+    if not ok_grep and err ~= "Keyboard interrupt" then
+        error(err)
+    end
+
     vim.cmd.echo("''")
 end
 
