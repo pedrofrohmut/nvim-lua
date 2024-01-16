@@ -1,12 +1,12 @@
 --[[
-    Vim keykeymaps that must work with neovim without any plugin
-    The plugins keykeymaps must be in their repective config files
+    Vim keymaps that must work with neovim without any plugin
+    The plugins keymaps must be in their repective config files
     To discover keymaps just use RipGrep or :verbose <mode>keymap <key>
 ]]
 
-vim.g.keymapleader = " "
+vim.g.mapleader = " "
 
-local keymap = vim.keykeymap.set
+local keymap = vim.keymap.set
 
 -- Unsetters: Do nothing to remove unwanted default behavior
 keymap({"n", "v"}, "<Space>",   "<Nop>", { silent = true })
@@ -127,7 +127,7 @@ keymap("n", "<C-h>",      ":tabprevious<CR>", { silent = true })
 
 -- ### Jumping/Scrolling #######################################################
 
--- To line keykeymaps, that I never use. To better moving
+-- To line keymaps, that I never use. To better moving
 keymap({"n", "v"}, "M",     "%")  -- Easier to press %
 keymap("n",        "H",     "^")  -- First non-blank character
 keymap("n",        "L",     "g_") -- Last non-blank character
