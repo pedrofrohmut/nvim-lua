@@ -96,4 +96,3 @@ vim.keymap.set("n", "<leader>fw", builtin.lsp_dynamic_workspace_symbols)
 
 vim.keymap.set("n", "<leader>sd", builtin.lsp_document_symbols)
 vim.keymap.set("n", "<leader>sw", builtin.lsp_workspace_symbols)
-

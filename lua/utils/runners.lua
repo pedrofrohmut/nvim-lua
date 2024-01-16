@@ -8,6 +8,7 @@ vim.cmd [[
         autocmd FileType c          nnoremap <buffer> <leader>rr :w<CR>:! make <CR>
 
         autocmd FileType cpp        nnoremap <buffer> <leader>rf :w<CR>:! g++ -o %< % && ./%< <CR>
+        autocmd FileType cpp        nnoremap <buffer> <leader>rr :w<CR>:! make <CR>
 
         autocmd FileType python     nnoremap <buffer> <leader>rf :w<CR>:! python % <CR>
 
