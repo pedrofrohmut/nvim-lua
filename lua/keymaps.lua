@@ -19,7 +19,7 @@ keymap("n", "<C-i>", "<C-i>")
 
 -- Function Keys
 keymap("n", "<F1>", ":vertical help ")
-keymap("n", "<F2>", ":verbose keymap ")
+keymap("n", "<F2>", ":verbose map ")
 
 -- File Explorer
 keymap("n", "<leader>fe", vim.cmd.Explore)
