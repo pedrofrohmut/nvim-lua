@@ -14,6 +14,8 @@ vim.cmd [[
 
         autocmd FileType javascript nnoremap <buffer> <leader>rf :w<CR>:! node % <CR>
 
+        autocmd FileType java       nnoremap <buffer> <leader>rf :w<CR>:! javac % && java %:r <CR>
+
         autocmd FileType sh         nnoremap <buffer> <leader>rf :w<CR>:! ./% <CR>
 
         autocmd FileType elixir     nnoremap <buffer> <leader>rf :w<CR>:! elixir % <CR>
