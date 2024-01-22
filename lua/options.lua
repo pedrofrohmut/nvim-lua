@@ -2,50 +2,45 @@
     VIM OPTIONS   :help options
 ]]
 
-local options = {
-    -- Indentation and tabing
-    expandtab   = true,
-    shiftwidth  = 4,
-    softtabstop = 4,
-    tabstop     = 4,
-    smartindent = true,
+local opt = vim.opt
 
-    -- Searching
-    incsearch = true,
-    hlsearch  = false,
+-- Indentation and tabing
+opt.expandtab      = true
+opt.shiftwidth     = 4
+opt.softtabstop    = 4
+opt.tabstop        = 4
+opt.smartindent    = true
 
-    -- Appearance
-    signcolumn     = "yes:1",
-    colorcolumn    = { "81", "101" },
-    cmdheight      = 1,
-    termguicolors  = true,
-    showmode       = false,
-    number         = true,
-    relativenumber = true,
-    wildmenu       = true,
+-- Searching
+opt.incsearch      = true
+opt.hlsearch       = false
 
-    -- Behavior
-    splitright    = true,
-    splitbelow    = true,
-    sidescrolloff = 8,
-    --scrolloff     = 8, --Breaks Sneak 'S'
-    cursorline    = true,
-    mouse         = "a",
-    updatetime    = 250,
-    wrap          = false,
+-- Appearance
+opt.signcolumn     = "yes:1"
+opt.colorcolumn    = { "81", "101" }
+opt.cmdheight      = 1
+opt.termguicolors  = true
+opt.showmode       = false
+opt.number         = true
+opt.relativenumber = true
+opt.wildmenu       = true
 
-    -- Files
-    fileformat  = "unix",
-    backup      = false,
-    writebackup = false,
-    autoread    = true,
+-- Behavior
+opt.splitright     = true
+opt.splitbelow     = true
+opt.sidescrolloff  = 8
+opt.cursorline     = true
+opt.mouse          = "a"
+opt.updatetime     = 250
+opt.wrap           = false
 
-    -- CMP
-    completeopt = { "menu", "menuone", "noselect" }
-}
+-- Files
+opt.fileformat     = "unix"
+opt.backup         = false
+opt.writebackup    = false
+opt.autoread       = true
 
-for key, value in pairs(options) do
-  vim.opt[key] = value
-end
+-- CMP
+opt.completeopt    = { "menu", "menuone", "noselect" }
 
 vim.cmd [[ set path=$PWD/** ]]

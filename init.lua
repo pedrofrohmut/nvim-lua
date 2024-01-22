@@ -7,6 +7,8 @@
         5. For the plugins theirs respective Readmes and help
 ]]--
 
+require "plugins.lazy"
+
 require "autocmds"
 require "colors"
 require "keymaps"
@@ -14,18 +16,17 @@ require "lsp"
 require "options"
 require "treesitter"
 
+--require "plugins.lsp-signature"
 require "plugins.autopairs"
 require "plugins.closetag"
 require "plugins.cmp"
 require "plugins.emmet"
+require "plugins.formatter"
 require "plugins.jsx-prettier"
---require "plugins.lsp-signature"
 require "plugins.lualine"
 require "plugins.luasnip"
 require "plugins.mason"
 require "plugins.nerdtree"
--- require "plugins.null-ls"
-require "plugins.packer"
 require "plugins.sneak"
 require "plugins.surround"
 require "plugins.symbols-outline"
