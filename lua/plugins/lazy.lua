@@ -22,11 +22,8 @@ local plugins = {
     { "williamboman/mason.nvim", build = ":MasonUpdate" },
     { "williamboman/mason-lspconfig.nvim" },
 
-    -- Linters
-    --{ "mfussenegger/nvim-lint" },
-
-    -- Formatter
-    { "mhartington/formatter.nvim" },
+    -- Formatter & Linter
+    { "dense-analysis/ale" },
 
     -- Language Support
     { "nvim-treesitter/nvim-treesitter", build = ":TSUpdate" },
