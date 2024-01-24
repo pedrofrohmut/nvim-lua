@@ -64,7 +64,6 @@ local plugins = {
     { "justinmk/vim-sneak" },
 
     -- Auto Pairs
-    { "alvan/vim-closetag" },
     { "windwp/nvim-autopairs" },
 
     -- EditorConfig

@@ -13,6 +13,10 @@ vim.g.ale_linters_explict = 1
 vim.g.ale_linters = {
     javascript =  { "eslint" }
 }
+-- lint only on save
+vim.g.ale_lint_on_text_changed = 'never'
+vim.g.ale_lint_on_insert_leave = 0
+vim.g.ale_lint_on_enter = 0
 
 -- Completion
 vim.g.ale_completion_enabled = 0

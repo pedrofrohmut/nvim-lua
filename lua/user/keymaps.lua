@@ -185,7 +185,7 @@ keymap("v", "<leader>sh", 'y<Esc>:%s/<C-r>"/')
 -- Sort
 keymap("v", "<leader>sp", ":sort<Enter>")
 
-local f = require("utils.string-functions")
+local f = require("user.utils.string-functions")
 
 -- Remove trailing spaces
 keymap("n", "<leader>st", f.remove_trailing)
