@@ -13,6 +13,7 @@ keymap({"n", "v"}, "<Space>",   "<Nop>", { silent = true })
 keymap("i",        "<C-j>",     "<Nop>")
 keymap("n",        "R",         "<Nop>") -- Disable WTF mode
 keymap({"n", "v"}, "<C-Space>", "<Nop>", { silent = true })
+keymap("n",        "<C-Enter>", "<Nop>")
 
 -- Fix C-i so you can keymap Tab Key
 keymap("n", "<C-i>", "<C-i>")
@@ -46,6 +47,9 @@ keymap("n", "<A-Enter>", "<CR>")
 
 -- Insert spaces in normal mode
 keymap("n", "<C-Space>", "i<Space><Esc>l")
+
+-- Unjoin lines (Opposite of J)
+keymap("n", "<C-Enter>", "WWi<Enter><Esc>")
 
 -- Move Text (by Primeagen)
 keymap("v", "<C-j>", ":move '>+1<CR>gv=gv", { silent = true })

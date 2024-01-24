@@ -81,6 +81,12 @@ local plugins = {
     -- Aligner
     { "tommcdo/vim-lion" },
 
+    -- Split and Join
+    {
+        'Wansmer/treesj',
+        dependencies = { 'nvim-treesitter/nvim-treesitter' }
+    },
+
     -- Git gutter
     { "airblade/vim-gitgutter" },
 

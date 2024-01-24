@@ -31,5 +31,6 @@ require "user.plugins.surround"
 require "user.plugins.symbols-outline"
 require "user.plugins.tcomment"
 require "user.plugins.telescope"
+require "user.plugins.treesj"
 
 require "user.utils.runners"
