@@ -28,7 +28,7 @@ opt.wildmenu       = true
 -- Behavior
 opt.splitright     = true
 opt.splitbelow     = true
-opt.sidescrolloff  = 8
+--opt.sidescrolloff  = 8
 opt.cursorline     = true
 opt.mouse          = "a"
 opt.updatetime     = 250

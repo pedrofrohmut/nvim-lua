@@ -87,6 +87,8 @@ local plugins = {
         dependencies = { 'nvim-treesitter/nvim-treesitter' }
     },
 
+    { "shortcuts/no-neck-pain.nvim", version = "*" },
+
     -- Git gutter
     { "airblade/vim-gitgutter" },
 

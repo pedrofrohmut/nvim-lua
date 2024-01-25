@@ -32,5 +32,6 @@ require "user.plugins.symbols-outline"
 require "user.plugins.tcomment"
 require "user.plugins.telescope"
 require "user.plugins.treesj"
+require "user.plugins.no-neck-pain"
 
 require "user.utils.runners"

@@ -108,6 +108,12 @@ lsp.html.setup({
     capabilities = capabilities,
 })
 
+-- Java
+lsp.jdtls.setup({
+    on_attach = on_attach,
+    capabilities = capabilities,
+})
+
 -- Lua
 lsp.lua_ls.setup({
     -- cmd = { "lua-language-server" },

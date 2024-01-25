@@ -16,7 +16,10 @@ vim.g.NERDTreeIgnore = {
     ".lock",
     "package-lock.json",
     ".expo",
-    "build"
+    "build/",
+    ".gradle",
+    "gradle",
+    ".settings",
 }
 vim.g.NERDTreeWinSize     = 36
 vim.g.NERDTreeHijackNetrw = 1
