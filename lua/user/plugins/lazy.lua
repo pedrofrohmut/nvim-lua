@@ -60,6 +60,9 @@ local plugins = {
     -- Tree file explorer
     { "preservim/nerdtree" },
 
+    -- File Explorer
+    { 'stevearc/oil.nvim' },
+
     -- Jump plugin like small version of easy motion
     { "justinmk/vim-sneak" },
 
